@@ -1,5 +1,5 @@
 // Sopan service worker: app shell works offline; openings always fetched fresh when online.
-const CACHE = "sopan-v1";
+const CACHE = "sopan-v2";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
 
 self.addEventListener("install", e => {

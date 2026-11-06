@@ -4,126 +4,394 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sopan — your next step, on time</title>
-<meta name="description" content="PhD positions, fellowships and deadlines for Indian students, updated daily.">
+<meta name="description" content="PhD openings in physics and astronomy from job boards and institutes worldwide, with deadlines, checked every morning.">
 <meta name="theme-color" content="#1b1640">
+<meta property="og:title" content="Sopan — your next step, on time">
+<meta property="og:description" content="PhD openings in physics and astronomy, with deadlines, checked every morning.">
+<meta property="og:image" content="icon-512.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f7f5ef; --card:#ffffff; --ink:#1b1640; --muted:#6b6880; --line:#e7e3d8;
-    --accent:#e8902a; --accent-ink:#1b1640; --soon:#c2410c; --soon-bg:#fdeee4; --ok-bg:#eef0fb;
+    --indigo:#1b1640; --indigo-2:#2b2560; --saffron:#e8902a; --marigold:#f6c27a; --saffron-ink:#9a5408;
+    --paper:#f4f3f9; --card:#ffffff; --ink:#1b1640; --muted:#5c5876; --line:#dcd9e8;
+    --urgent:#b42318; --urgent-bg:#fdecea;
+    --serif:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#12101f; --card:#1c1930; --ink:#f1eff8; --muted:#a29fb8; --line:#2c2846;
-           --accent:#f0a24a; --accent-ink:#12101f; --soon:#fb923c; --soon-bg:#3a2216; --ok-bg:#262246; }
+    :root{ --paper:#14112b; --card:#1d1940; --ink:#ecebf6; --muted:#a9a5c4; --line:#2f2a58;
+           --urgent:#ff8a7a; --urgent-bg:#3b1a24; --saffron-ink:#f6c27a; }
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-       font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif}
-  header{background:#1b1640;color:#fff;padding:28px 16px 22px}
-  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
-  header .wrap{padding:0}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand img{width:40px;height:40px;border-radius:10px}
-  h1{margin:0;font-size:1.6rem;letter-spacing:.3px}
-  .tag{margin:6px 0 16px;color:#cfcbe6}
-  .join{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:700;
-        padding:10px 16px;border-radius:999px;text-decoration:none}
-  .controls{position:sticky;top:0;background:var(--bg);padding:14px 0 10px;z-index:2;border-bottom:1px solid var(--line)}
-  input[type=search]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);
-        background:var(--card);color:var(--ink);font-size:1rem}
-  .chips{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-  .chip{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;
-        border-radius:999px;font-size:.9rem;cursor:pointer}
-  .chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-  .count{color:var(--muted);font-size:.9rem;margin:12px 0 4px}
-  ul{list-style:none;margin:0;padding:0}
-  li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
-  li a.title{color:var(--ink);font-weight:650;text-decoration:none;display:block}
-  li a.title:hover{text-decoration:underline}
-  .meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-top:8px;color:var(--muted);font-size:.88rem}
-  .badge{padding:2px 9px;border-radius:999px;background:var(--ok-bg);color:var(--ink);font-weight:600;font-size:.82rem}
-  .badge.soon{background:var(--soon-bg);color:var(--soon)}
-  .new{color:var(--accent);font-weight:700}
-  .empty{color:var(--muted);text-align:center;padding:40px 0}
-  footer{color:var(--muted);font-size:.85rem;text-align:center;padding:28px 16px 40px}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--sans)}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--saffron);outline-offset:2px;border-radius:4px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--indigo);color:#fff;padding:18px 0 34px;overflow:hidden}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .mark img{width:34px;height:34px;border-radius:8px}
+  .mark span{font:600 1.45rem/1 var(--serif);letter-spacing:.2px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font:600 .95rem/1 var(--sans);text-decoration:none;
+       border-radius:999px;padding:11px 18px;border:0;cursor:pointer}
+  .btn-saffron{background:var(--saffron);color:var(--indigo)}
+  .btn-saffron:hover{background:var(--marigold)}
+  .btn-ghost{background:transparent;color:inherit;border:1px solid currentColor}
+  .hero-grid{display:grid;gap:28px;margin-top:34px}
+  @media (min-width:860px){ .hero-grid{grid-template-columns:5fr 6fr;align-items:end;gap:48px} }
+  h1{font:500 clamp(2.4rem,7vw,3.9rem)/1.02 var(--serif);margin:0;letter-spacing:-.5px}
+  .lede{color:#d4d0ec;max-width:34ch;margin:14px 0 22px;font-size:1.05rem}
+  .facts{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;color:#d4d0ec;font-size:.92rem}
+  .facts div{display:flex;align-items:baseline;gap:6px}
+  .facts dt{order:2}
+  .facts dd{margin:0;font:600 1.35rem/1 var(--serif);color:#fff}
+
+  /* the staircase: soonest deadline is the bottom step */
+  .stairs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column-reverse;gap:7px}
+  .step{--i:0;margin-left:calc(var(--i) * 7%);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;
+        background:var(--c);color:var(--indigo);border-radius:12px 12px 4px 4px;padding:12px 16px;text-decoration:none;
+        min-height:72px;transform-origin:bottom left}
+  .step:hover .st-title{text-decoration:underline}
+  .st-days{font:600 2rem/1 var(--serif);text-align:right;min-width:2.2ch}
+  .st-days small{display:block;font:500 .72rem/1.2 var(--sans);opacity:.8}
+  .st-title{font:500 1rem/1.3 var(--serif);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .st-src{font-size:.8rem;opacity:.75;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .stairs-note{color:#b9b4dc;font-size:.85rem;margin:10px 0 0}
+  @media (prefers-reduced-motion:no-preference){
+    .step{animation:rise .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 90ms)}
+    @keyframes rise{from{opacity:0;transform:translateY(14px) scaleY(.9)}to{opacity:1;transform:none}}
+  }
+
+  /* ---------- openings ---------- */
+  main{padding:26px 0 10px}
+  .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
+  .tab{font:500 1rem var(--sans);background:none;border:0;color:var(--muted);padding:10px 12px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
+  .tab[aria-selected=true]{color:var(--ink);border-bottom-color:var(--saffron)}
+  .controls{display:grid;gap:10px;padding:16px 0 6px}
+  @media (min-width:760px){ .controls{grid-template-columns:2fr 1fr 1fr 1fr} }
+  .controls input,.controls select{width:100%;font:1rem var(--sans);color:var(--ink);background:var(--card);
+        border:1px solid var(--line);border-radius:10px;padding:11px 12px;appearance:none}
+  .controls select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+        background-position:calc(100% - 18px) 52%,calc(100% - 13px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:30px}
+  .count{color:var(--muted);font-size:.9rem;margin:6px 0 0}
+  .shortlist-tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .btn-line{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:9px 14px;font:500 .9rem var(--sans);cursor:pointer}
+
+  .group h2{font:500 1.5rem/1.2 var(--serif);margin:30px 0 4px;display:flex;align-items:baseline;gap:10px}
+  .group h2 span{font:400 .9rem var(--sans);color:var(--muted)}
+  .entries{list-style:none;margin:0;padding:0}
+  .entry{display:grid;grid-template-columns:58px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .stamp{border:1px solid var(--line);background:var(--card);border-radius:8px;text-align:center;padding:6px 0 5px;height:fit-content}
+  .stamp b{display:block;font:600 1.45rem/1 var(--serif)}
+  .stamp i{display:block;font:normal 500 .75rem/1.3 var(--sans);color:var(--muted)}
+  .stamp.urgent{border-color:var(--urgent);background:var(--urgent-bg)}
+  .stamp.urgent b,.stamp.urgent i{color:var(--urgent)}
+  .entry h3{margin:0;font:500 1.12rem/1.35 var(--serif)}
+  .entry h3 a{text-decoration:none}
+  .entry h3 a:hover{text-decoration:underline}
+  .src{color:var(--muted);font-size:.9rem;margin-top:2px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+  .tag{font-size:.8rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+  .left{font-size:.85rem;font-weight:600;color:var(--saffron-ink)}
+  .left.urgent{color:var(--urgent)}
+  .new{font-size:.8rem;font-weight:600;color:var(--indigo);background:var(--marigold);padding:2px 8px;border-radius:999px}
+  .acts{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px}
+  .act{background:none;border:0;padding:4px 0;font:500 .88rem var(--sans);color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+  .act:hover{color:var(--ink)}
+  .act svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .act[aria-pressed=true]{color:var(--saffron-ink)}
+  .act[aria-pressed=true] svg{fill:currentColor}
+  .empty{padding:44px 8px;text-align:center;color:var(--muted)}
+  .empty strong{display:block;font:500 1.3rem var(--serif);color:var(--ink);margin-bottom:6px}
+
+  /* ---------- how it works & next ---------- */
+  .band{margin-top:56px;padding:44px 0;border-top:1px solid var(--line)}
+  .band h2{font:500 clamp(1.7rem,4vw,2.3rem)/1.15 var(--serif);margin:0 0 22px}
+  .how{list-style:none;margin:0;padding:0;display:grid;gap:22px;counter-reset:s}
+  @media (min-width:760px){ .how{grid-template-columns:repeat(3,1fr)} }
+  .how li{counter-increment:s;position:relative;padding-left:46px}
+  .how li::before{content:counter(s);position:absolute;left:0;top:-4px;font:600 2rem/1 var(--serif);color:var(--saffron)}
+  .how h3{margin:0 0 4px;font:600 1rem var(--sans)}
+  .how p{margin:0;color:var(--muted)}
+  .next{display:grid;gap:16px}
+  @media (min-width:760px){ .next{grid-template-columns:1fr 1fr} }
+  .panel{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:22px}
+  .panel h3{font:500 1.35rem/1.2 var(--serif);margin:0 0 8px}
+  .panel p{margin:0 0 14px;color:var(--muted)}
+  .panel ul{margin:0 0 16px;padding-left:18px}
+  .panel li{margin:3px 0}
+  .pro{background:var(--indigo);color:#fff;border-color:var(--indigo-2)}
+  .pro p{color:#d4d0ec}
+  .exams{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px;padding:0;list-style:none}
+  .exams li{border:1px solid var(--line);border-radius:6px;padding:3px 10px;font-weight:500;font-size:.9rem}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);font-size:.88rem}
+  footer p{margin:0 0 10px;max-width:72ch}
+  footer a{color:var(--ink)}
+  .srcs{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 14px;padding:0;list-style:none}
 </style>
 </head>
 <body>
-<header>
+
+<header class="hero">
   <div class="wrap">
-    <div class="brand"><img src="icon-192.png" alt=""><h1>Sopan</h1></div>
-    <p class="tag">Your next step, on time. PhD positions and deadlines, checked every morning.</p>
-    <a class="join" id="join" href="#" hidden>Get daily alerts on Telegram</a>
+    <div class="bar">
+      <a class="mark" href="./"><img src="icon-192.png" alt=""><span>Sopan</span></a>
+      <a class="btn btn-saffron" id="join-top" href="#" hidden>Join on Telegram</a>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1>Your next steps</h1>
+        <p class="lede" id="lede">PhD openings in physics and astronomy, collected from job boards and institutes every morning, ordered by deadline.</p>
+        <dl class="facts" id="facts"></dl>
+      </div>
+      <div>
+        <h2 class="visually-hidden">Closest deadlines</h2>
+        <ol class="stairs" id="stairs"></ol>
+        <p class="stairs-note" id="stairs-note"></p>
+      </div>
+    </div>
   </div>
 </header>
 
-<main class="wrap">
-  <div class="controls">
-    <input type="search" id="q" placeholder="Search: radio, cosmology, Germany, Manchester…" aria-label="Search openings">
-    <div class="chips" role="group" aria-label="Filter">
-      <button class="chip" data-f="all" aria-pressed="true">All</button>
-      <button class="chip" data-f="soon" aria-pressed="false">Closing in 2 weeks</button>
-      <button class="chip" data-f="new" aria-pressed="false">New this week</button>
-    </div>
+<main class="wrap" id="openings">
+  <div class="tabs" role="tablist" aria-label="Openings">
+    <button class="tab" role="tab" aria-selected="true" data-tab="all">All openings</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="saved">My shortlist <span id="saved-n"></span></button>
   </div>
-  <p class="count" id="count"></p>
-  <ul id="list"></ul>
+
+  <div class="controls">
+    <label class="visually-hidden" for="q">Search openings</label>
+    <input type="search" id="q" placeholder="Search a topic, university or country">
+    <label class="visually-hidden" for="field">Field</label>
+    <select id="field"><option value="">All fields</option></select>
+    <label class="visually-hidden" for="region">Region</label>
+    <select id="region"><option value="">All regions</option></select>
+    <label class="visually-hidden" for="sort">Sort</label>
+    <select id="sort"><option value="deadline">Deadline first</option><option value="new">Newest first</option></select>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="shortlist-tools" id="saved-tools" hidden>
+    <button class="btn-line" id="ics-all">Add all deadlines to calendar</button>
+  </div>
+  <div id="list"></div>
+
+  <section class="band" aria-labelledby="how-h">
+    <h2 id="how-h">How Sopan works</h2>
+    <ol class="how">
+      <li><h3>It reads the boards for you</h3><p id="how-1">Every morning at 7:47 Sopan checks PhD job boards and institute pages and keeps the openings in physics and astronomy.</p></li>
+      <li><h3>New openings reach Telegram</h3><p>Each new position is posted to the channel with its deadline, so it reaches you within a day of being advertised.</p></li>
+      <li><h3>You get reminded in time</h3><p>Three days before a deadline Sopan posts a reminder. Save openings here and add them to your phone's calendar.</p></li>
+    </ol>
+  </section>
+
+  <section class="band" aria-labelledby="next-h">
+    <h2 id="next-h">Coming to Sopan</h2>
+    <div class="next">
+      <div class="panel">
+        <h3>Indian entrance exams</h3>
+        <p>Application windows, admit cards and results for the exams that lead to a PhD in India.</p>
+        <ul class="exams"><li>JEST</li><li>GATE</li><li>JAM</li><li>CSIR NET</li><li>TIFR GS</li><li>INAT</li></ul>
+      </div>
+      <div class="panel pro">
+        <h3>Sopan Pro</h3>
+        <p>Alerts made for you alone, sent privately on Telegram.</p>
+        <ul>
+          <li>Your own topics and countries</li>
+          <li>Your own list of professors and groups to watch</li>
+          <li>Reminders 14, 7 and 1 day before each deadline you save</li>
+        </ul>
+        <a class="btn btn-saffron" id="pro" href="#">Join the Pro waitlist</a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer id="foot">Sopan</footer>
+
+<footer>
+  <div class="wrap">
+    <p>Openings are collected from:</p>
+    <ul class="srcs" id="srcs"></ul>
+    <p>Sopan links to the original advertisements. Always confirm eligibility and deadlines on the official page before applying.</p>
+    <p id="updated"></p>
+  </div>
+</footer>
 
 <script>
-const DAY = 86400000;
-const today = new Date(new Date().toDateString());
-let items = [], filter = "all";
+(() => {
+  const DAY = 864e5;
+  const today = new Date(new Date().toDateString());
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const dateOf = d => new Date(d + "T00:00:00");
+  const daysLeft = d => Math.round((dateOf(d) - today) / DAY);
+  const daysSince = d => Math.round((today - dateOf(d)) / DAY);
+  const fmt = (d, o) => dateOf(d).toLocaleDateString("en-IN", o || {day: "numeric", month: "short", year: "numeric"});
 
-const daysLeft = d => Math.round((new Date(d + "T00:00:00") - today) / DAY);
-const fmt = d => new Date(d + "T00:00:00").toLocaleDateString("en-IN", {day: "numeric", month: "short", year: "numeric"});
-const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  // shortlist lives in this browser only
+  const store = {
+    get() { try { return new Set(JSON.parse(localStorage.getItem("sopan.saved") || "[]")); } catch { return new Set(); } },
+    set(s) { try { localStorage.setItem("sopan.saved", JSON.stringify([...s])); } catch {} }
+  };
+  let saved = store.get();
+  let items = [], tab = "all";
 
-function render() {
-  const q = document.getElementById("q").value.trim().toLowerCase();
-  const shown = items.filter(it => {
-    if (q && !(it.title + " " + it.source).toLowerCase().includes(q)) return false;
-    if (filter === "soon") return it.deadline && daysLeft(it.deadline) <= 14;
-    if (filter === "new") return (today - new Date(it.found + "T00:00:00")) / DAY <= 7;
-    return true;
+  const icon = {
+    star: '<svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.8z"/></svg>',
+    cal: '<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>',
+    share: '<svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 10.8l7.6-3.6M8.2 13.2l7.6 3.6"/></svg>'
+  };
+
+  function ics(list) {
+    const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
+    const t = s => String(s).replace(/([,;\\])/g, "\\$1").replace(/\n/g, " ");
+    const ev = it => [
+      "BEGIN:VEVENT", `UID:${t(it.id)}@sopan`, `DTSTAMP:${stamp}`,
+      `DTSTART;VALUE=DATE:${it.deadline.replace(/-/g, "")}`,
+      `SUMMARY:${t("PhD deadline: " + it.title)}`, `URL:${t(it.url)}`, `DESCRIPTION:${t(it.url)}`,
+      "BEGIN:VALARM", "TRIGGER:-P3D", "ACTION:DISPLAY", "DESCRIPTION:Deadline in 3 days", "END:VALARM",
+      "END:VEVENT"].join("\r\n");
+    const body = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Sopan//PhD deadlines//EN", ...list.map(ev), "END:VCALENDAR"].join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([body], {type: "text/calendar"}));
+    a.download = list.length === 1 ? "phd-deadline.ics" : "sopan-deadlines.ics";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+
+  function share(it) {
+    const text = `${it.title}${it.deadline ? " (deadline " + fmt(it.deadline) + ")" : ""}`;
+    if (navigator.share) { navigator.share({title: it.title, text, url: it.url}).catch(() => {}); return; }
+    window.open("https://wa.me/?text=" + encodeURIComponent(`${text}\n${it.url}\n\nFound on Sopan: ${location.href.split("#")[0]}`), "_blank", "noopener");
+  }
+
+  function stairs() {
+    const upcoming = items.filter(i => i.deadline && daysLeft(i.deadline) >= 0)
+      .sort((a, b) => a.deadline.localeCompare(b.deadline)).slice(0, 5);
+    const colors = ["#e8902a", "#ee9f45", "#f2b062", "#f6c27a", "#f9d49d"];
+    $("#stairs").innerHTML = upcoming.map((it, i) => {
+      const d = daysLeft(it.deadline);
+      return `<li><a class="step" style="--i:${i};--c:${colors[i]}" href="${esc(it.url)}" target="_blank" rel="noopener">
+        <span class="st-days">${d}<small>${d === 1 ? "day" : "days"}</small></span>
+        <span><span class="st-title">${esc(it.title)}</span><span class="st-src">${esc(it.source)}</span></span></a></li>`;
+    }).join("");
+    $("#stairs-note").textContent = upcoming.length
+      ? "The closest deadlines, soonest at the bottom."
+      : "Deadlines will build up here as Sopan finds openings.";
+  }
+
+  function facts(meta) {
+    const open = items.length;
+    const week = items.filter(i => i.deadline && daysLeft(i.deadline) <= 7).length;
+    const nsrc = (meta.sources || []).length + (meta.watching || 0);
+    const f = [[open, open === 1 ? "opening" : "openings"], [week, "close this week"]];
+    if (nsrc) f.push([nsrc, "places checked daily"]);
+    $("#facts").innerHTML = f.map(([n, l]) => `<div><dt>${l}</dt><dd>${n}</dd></div>`).join("");
+  }
+
+  function fillSelect(sel, values) {
+    [...new Set(values.filter(Boolean))].sort().forEach(v => sel.insertAdjacentHTML("beforeend", `<option>${esc(v)}</option>`));
+  }
+
+  function entry(it) {
+    const d = it.deadline ? daysLeft(it.deadline) : null;
+    const urgent = d !== null && d <= 7;
+    const stamp = it.deadline
+      ? `<div class="stamp${urgent ? " urgent" : ""}" aria-hidden="true"><b>${fmt(it.deadline, {day: "numeric"})}</b><i>${fmt(it.deadline, {month: "short"})}</i></div>`
+      : `<div class="stamp" aria-hidden="true"><b>–</b><i>open</i></div>`;
+    const left = d === null ? "" : `<span class="left${urgent ? " urgent" : ""}">${d === 0 ? "Closes today" : d === 1 ? "1 day left" : d + " days left"}</span>`;
+    const isSaved = saved.has(it.id);
+    return `<li class="entry">${stamp}<div>
+      <h3><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></h3>
+      <div class="src">${esc(it.source)}${it.deadline ? `, closes ${fmt(it.deadline)}` : ""}</div>
+      <div class="tags">${left}${it.field ? `<span class="tag">${esc(it.field)}</span>` : ""}${it.region ? `<span class="tag">${esc(it.region)}</span>` : ""}${daysSince(it.found) <= 2 ? '<span class="new">New</span>' : ""}</div>
+      <div class="acts">
+        <button class="act" data-act="save" data-id="${esc(it.id)}" aria-pressed="${isSaved}">${icon.star}${isSaved ? "Saved" : "Save"}</button>
+        ${it.deadline ? `<button class="act" data-act="cal" data-id="${esc(it.id)}">${icon.cal}Add to calendar</button>` : ""}
+        <button class="act" data-act="share" data-id="${esc(it.id)}">${icon.share}Share</button>
+      </div></div></li>`;
+  }
+
+  function groups(list, sort) {
+    if (sort === "new") {
+      const g = {"Found today": [], "Found this week": [], "Found earlier": []};
+      list.forEach(i => { const s = daysSince(i.found); g[s === 0 ? "Found today" : s <= 7 ? "Found this week" : "Found earlier"].push(i); });
+      return Object.entries(g).filter(([, v]) => v.length);
+    }
+    const g = new Map();
+    list.forEach(i => {
+      const k = i.deadline ? fmt(i.deadline, {month: "long", year: "numeric"}) : "No deadline listed";
+      if (!g.has(k)) g.set(k, []);
+      g.get(k).push(i);
+    });
+    return [...g.entries()];
+  }
+
+  function render() {
+    const q = $("#q").value.trim().toLowerCase(), field = $("#field").value, region = $("#region").value, sort = $("#sort").value;
+    let list = items.filter(i =>
+      (tab === "all" || saved.has(i.id)) &&
+      (!field || i.field === field) && (!region || i.region === region) &&
+      (!q || `${i.title} ${i.source} ${i.region} ${i.field}`.toLowerCase().includes(q)));
+    list.sort(sort === "new"
+      ? (a, b) => b.found.localeCompare(a.found)
+      : (a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999") || b.found.localeCompare(a.found));
+    $("#count").textContent = `${list.length} ${list.length === 1 ? "opening" : "openings"}`;
+    $("#saved-n").textContent = saved.size ? `(${saved.size})` : "";
+    $("#saved-tools").hidden = !(tab === "saved" && list.some(i => i.deadline));
+    if (!list.length) {
+      $("#list").innerHTML = tab === "saved" && !saved.size
+        ? '<div class="empty"><strong>Your shortlist is empty</strong>Tap Save on any opening to keep it here.</div>'
+        : '<div class="empty"><strong>No openings match</strong>Try a broader word or clear the filters.</div>';
+      return;
+    }
+    $("#list").innerHTML = groups(list, sort).map(([name, g]) =>
+      `<section class="group"><h2>${esc(name)} <span>${g.length}</span></h2><ul class="entries">${g.map(entry).join("")}</ul></section>`).join("");
+  }
+
+  $("#list").addEventListener("click", e => {
+    const b = e.target.closest(".act"); if (!b) return;
+    const it = items.find(i => i.id === b.dataset.id); if (!it) return;
+    if (b.dataset.act === "save") { saved.has(it.id) ? saved.delete(it.id) : saved.add(it.id); store.set(saved); render(); }
+    if (b.dataset.act === "cal") ics([it]);
+    if (b.dataset.act === "share") share(it);
   });
-  document.getElementById("count").textContent = `${shown.length} opening${shown.length === 1 ? "" : "s"}`;
-  document.getElementById("list").innerHTML = shown.length ? shown.map(it => {
-    const left = it.deadline ? daysLeft(it.deadline) : null;
-    const badge = left === null ? '<span class="badge">No deadline listed</span>'
-      : `<span class="badge${left <= 7 ? " soon" : ""}">${left === 0 ? "Closes today" : left + " days left"} · ${fmt(it.deadline)}</span>`;
-    const isNew = (today - new Date(it.found + "T00:00:00")) / DAY <= 2;
-    return `<li><a class="title" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
-      <div class="meta">${badge}<span>${esc(it.source)}</span>${isNew ? '<span class="new">New</span>' : ""}</div></li>`;
-  }).join("") : '<li class="empty">Nothing matches yet. Try another word.</li>';
-}
+  $("#ics-all").addEventListener("click", () => ics(items.filter(i => saved.has(i.id) && i.deadline)));
+  ["#q", "#field", "#region", "#sort"].forEach(s => $(s).addEventListener("input", render));
+  document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+    tab = t.dataset.tab;
+    document.querySelectorAll(".tab").forEach(x => x.setAttribute("aria-selected", x === t));
+    render();
+  }));
 
-document.getElementById("q").addEventListener("input", render);
-document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
-  filter = b.dataset.f;
-  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === b));
-  render();
-}));
-
-fetch("data.json", {cache: "no-store"}).then(r => r.json()).then(data => {
-  items = (data.items || []).sort((a, b) => {
-    if (a.deadline && b.deadline) return a.deadline.localeCompare(b.deadline);
-    if (a.deadline) return -1;
-    if (b.deadline) return 1;
-    return b.found.localeCompare(a.found);
+  fetch("data.json", {cache: "no-store"}).then(r => r.json()).then(data => {
+    const meta = data.meta || {};
+    items = (data.items || []).filter(i => !i.deadline || daysLeft(i.deadline) >= 0);
+    const tg = meta.telegram_url;
+    if (tg) { $("#join-top").href = tg; $("#join-top").hidden = false; }
+    $("#pro").href = meta.pro_url || tg || "#";
+    fillSelect($("#field"), items.map(i => i.field));
+    fillSelect($("#region"), items.map(i => i.region));
+    const srcs = meta.sources || [];
+    $("#srcs").innerHTML = srcs.map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a></li>`).join("")
+      + (meta.watching ? `<li>and ${meta.watching} institute pages</li>` : "");
+    if (srcs.length) $("#how-1").textContent = `Every morning at 7:47 Sopan checks ${srcs.length} PhD job boards and ${meta.watching || 0} institute pages, and keeps the openings in physics and astronomy.`;
+    if (meta.updated) $("#updated").textContent = `Last checked ${fmt(meta.updated)}.`;
+    facts(meta); stairs(); render();
+  }).catch(() => {
+    $("#list").innerHTML = '<div class="empty"><strong>Openings could not load</strong>Check your connection and reload the page.</div>';
   });
-  const tg = data.meta && data.meta.telegram_url;
-  if (tg) { const j = document.getElementById("join"); j.href = tg; j.hidden = false; }
-  if (data.meta && data.meta.updated) document.getElementById("foot").textContent = `Sopan · updated ${fmt(data.meta.updated)}`;
-  render();
-}).catch(() => {
-  document.getElementById("list").innerHTML = '<li class="empty">Could not load openings. Check your connection.</li>';
-});
 
-if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+})();
 </script>
 </body>
 </html>

@@ -64,7 +64,7 @@ keywords:
     - application
 
 exclude_titles:
-  - post-?doc
+  - post[- ]?doc
   - postdoctoral
   - lecturer
   - professor

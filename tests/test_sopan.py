@@ -137,3 +137,15 @@ def test_first_run_silent_then_posts_only_new(tmp_path):
     sent.clear()
     _run_with(tmp_path, [newer, group_v2], sent)
     assert sent == []  # nothing new, nothing posted
+
+
+def test_code_titles_and_view_details_prefix():
+    html = """<ul>
+      <li>University of Geneva, Theoretical Physics, <a href="/ajo/jobs/111">PHDQUANTUM</a> PhD position in quantum theory (deadline 2027/01/15) Apply</li>
+      <li><a href="/ajo/jobs/222">ASTRO27PHD</a></li>
+    </ul>
+    <div><a href="/unijobs/listing/333/x">View details PhD Position on Arctic Energy Budget</a></div>"""
+    t = {i.id.split("/")[-1]: i.title for i in extract_links(html, "https://academicjobsonline.org/ajo/physics", "s", r"/(?:ajo/jobs|unijobs/listing)/\d+")}
+    assert t["111"] == "University of Geneva, Theoretical Physics, PhD position in quantum theory"
+    assert t["222"] == "ASTRO27PHD"   # nothing better available: keep the code
+    assert t["333"] == "PhD Position on Arctic Energy Budget"

@@ -90,6 +90,18 @@ def _context_text(a, title: str, own_key: str, base_url: str, pat: re.Pattern, m
 _GENERIC = re.compile(r"^(?:view|read|see|more|details|apply|click|here|link|learn)(?:\s+(?:more|details|now|here|info))*\W*$", re.I)
 
 
+_CODE = re.compile(r"^[A-Za-z0-9_.\-/]{2,40}$")  # a position code, not a title: no spaces
+
+
+def _title_from_context(ctx: str, code: str, limit: int = 140) -> str:
+    t = ctx.replace(f"[{code}]", " ").replace(code, " ")
+    t = re.split(r"\s[(\[]?(?:apply|deadline|posted|closing)\b", t, maxsplit=1, flags=re.I)[0]
+    t = re.sub(r"\s+", " ", t).strip(" ,:;-–|()[]")
+    if len(t) > limit:
+        t = t[:limit].rsplit(" ", 1)[0] + "…"
+    return t or code
+
+
 def title_from_url(url: str) -> str:
     """'…/saha-institute-of-nuclear-physics-phd-admission-2027-jan/' -> 'Saha Institute Of Nuclear Physics Phd Admission 2027 Jan'"""
     slug = [s for s in urlparse(url).path.split("/") if s][-1:] or [url]
@@ -142,7 +154,10 @@ def extract_links(html: str, base_url: str, source: str, link_pattern: str | Non
             title = title_from_url(url)  # "View Details" links: use the page address instead
         if not title or len(title) < 4:
             continue
+        title = re.sub(r"^(?:view|read|see)\s+(?:details|more)\s+", "", title, flags=re.I)  # "View details PhD in …"
         ctx = _context_text(a, title, m.group(0), base_url, pat) if pat else title
+        if pat and _CODE.match(title) and len(ctx) > len(title) + 10:
+            title = _title_from_context(ctx, title)  # "ASTRO27PHD" -> the listing's own words
         prev = items.get(key)
         if prev is None or len(title) > len(prev.title):
             items[key] = Item(id=key, url=url, title=title, source=source, context=ctx)

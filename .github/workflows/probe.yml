@@ -1,0 +1,25 @@
+name: Probe websites
+
+# Run by hand from the Actions tab: paste one or more URLs (space separated)
+# to see whether Sopan can read them and what their job links look like.
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "URLs to check (space separated)"
+        required: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m sopan.probe $URLS
+        env:
+          URLS: ${{ github.event.inputs.urls }}

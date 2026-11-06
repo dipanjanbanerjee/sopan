@@ -87,6 +87,35 @@ def _context_text(a, title: str, own_key: str, base_url: str, pat: re.Pattern, m
     return re.sub(r"\s+", " ", ctx)
 
 
+_GENERIC = re.compile(r"^(?:view|read|see|more|details|apply|click|here|link|learn)(?:\s+(?:more|details|now|here|info))*\W*$", re.I)
+
+
+def title_from_url(url: str) -> str:
+    """'…/saha-institute-of-nuclear-physics-phd-admission-2027-jan/' -> 'Saha Institute Of Nuclear Physics Phd Admission 2027 Jan'"""
+    slug = [s for s in urlparse(url).path.split("/") if s][-1:] or [url]
+    words = re.sub(r"\.\w+$", "", slug[0]).replace("_", "-").split("-")
+    return " ".join(w if w.isupper() else w.capitalize() for w in words if w)
+
+
+FIELDS = [
+    ("Astronomy", r"astro|cosmolog|galax|stellar|star\b|stars\b|planet|telescope|solar|space|gravitational|black hole|radio|pulsar|interferomet|ionosph"),
+    ("Quantum", r"quantum|qubit|entangle"),
+    ("Condensed matter", r"condensed|material|semiconductor|superconduct|magnet|graphene|metamaterial|crystal|thin film|nano"),
+    ("Optics & photonics", r"optic|photon|laser|spectroscop"),
+    ("Particle & nuclear", r"particle|nuclear|hadron|neutrino|collider|high.energy"),
+    ("Plasma & fusion", r"plasma|fusion"),
+    ("Engineering", r"engineer|aeronaut|turbine|robot|mechanic|electrical|civil"),
+]
+_FIELD_RES = [(name, re.compile(rf"\b(?:{p})", re.I)) for name, p in FIELDS]
+
+
+def classify_field(text: str) -> str:
+    for name, rx in _FIELD_RES:
+        if rx.search(text):
+            return name
+    return "Physics"
+
+
 def extract_links(html: str, base_url: str, source: str, link_pattern: str | None = None) -> list[Item]:
     soup = BeautifulSoup(html, "html.parser")
     pat = re.compile(link_pattern) if link_pattern else None
@@ -109,6 +138,8 @@ def extract_links(html: str, base_url: str, source: str, link_pattern: str | Non
             if url.rstrip("/") == base_url.rstrip("/"):
                 continue
         title = re.sub(r"\s+", " ", a.get_text(" ", strip=True))
+        if title and _GENERIC.match(title):
+            title = title_from_url(url)  # "View Details" links: use the page address instead
         if not title or len(title) < 4:
             continue
         ctx = _context_text(a, title, m.group(0), base_url, pat) if pat else title

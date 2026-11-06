@@ -17,7 +17,7 @@ from pathlib import Path
 import yaml
 
 from . import telegram as tg
-from .core import Item, compile_keywords, extract_links, fetch, matches, parse_deadline
+from .core import Item, classify_field, compile_keywords, extract_links, fetch, matches, parse_deadline
 
 ROOT = Path(__file__).resolve().parent.parent
 MAX_POSTS = 40           # openings posted per run; the rest are on the web page
@@ -54,11 +54,11 @@ def resolve(spec, profiles: dict):
     return compile_keywords(words)
 
 
-def scan(src: dict, profiles: dict, today: date, is_watch: bool, exclude=None) -> list[Item]:
+def scan(src: dict, profiles: dict, today: date, is_watch: bool, exclude=None, watch_kw=None) -> list[Item]:
     html = fetch(src["url"])
     found = extract_links(html, src["url"], src["name"], src.get("link_pattern"))
-    if is_watch:
-        return found
+    if is_watch:  # only links that look like positions/admissions, so menus and news don't trigger alerts
+        return [i for i in found if not watch_kw or watch_kw.search(f"{i.title} {i.url}")]
     m_any, a_any = resolve(src.get("match_any"), profiles), resolve(src.get("and_any"), profiles)
     kept = [i for i in found if matches(i, m_any, a_any) and not (exclude and exclude.search(i.title))]
     for i in kept:
@@ -78,6 +78,8 @@ def main(argv=None) -> int:
     cfg = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
     profiles = cfg.get("keywords", {})
     exclude = resolve(cfg.get("exclude_titles") or None, profiles)
+    watch_kw = resolve(cfg.get("watch_keywords") or None, profiles)
+    region_of = {s["name"]: s.get("region", "") for s in cfg.get("sources", []) or []}
     today = date.today()
 
     state_path, data_path = ROOT / "state" / "seen.json", ROOT / "docs" / "data.json"
@@ -98,7 +100,7 @@ def main(argv=None) -> int:
     for src, is_watch in all_sources:
         key = ("watch:" if is_watch else "") + src["name"]
         try:
-            items = scan(src, profiles, today, is_watch, exclude)
+            items = scan(src, profiles, today, is_watch, exclude, watch_kw)
         except Exception as e:  # one bad site must not stop the rest
             failures += 1
             print(f"  ❌ {src['name']}: {e}")
@@ -113,7 +115,9 @@ def main(argv=None) -> int:
             state["seen"][it.id] = today.isoformat()
             if not is_watch:
                 web[it.id] = {"id": it.id, "url": it.url, "title": it.title, "source": it.source,
-                              "deadline": it.deadline, "found": today.isoformat()}
+                              "deadline": it.deadline, "found": today.isoformat(),
+                              "field": classify_field(f"{it.title} {it.context}"),
+                              "region": src.get("region", "")}
             if not first_time:  # first scan of a source only records what's already there
                 (watch_hits if is_watch else new_items).append(it)
         if first_time and not args.dry_run:
@@ -174,10 +178,18 @@ def main(argv=None) -> int:
         return date.fromisoformat(it["found"]) >= today - timedelta(days=KEEP_UNDATED_DAYS)
 
     items = sorted((i for i in web.values() if keep(i)), key=lambda i: i["found"], reverse=True)[:1000]
+    for i in items:  # tag older entries saved before fields/regions existed
+        i.setdefault("field", classify_field(i["title"]))
+        if not i.get("region"):
+            i["region"] = region_of.get(i["source"], "")
     seen = dict(sorted(state["seen"].items(), key=lambda kv: kv[1], reverse=True)[:20000])
     save_json(state_path, {"initialized": state["initialized"], "seen": seen})
+    site_cfg = cfg.get("site", {})
     save_json(data_path, {"meta": {"updated": today.isoformat(),
-                                   "telegram_url": cfg.get("site", {}).get("telegram_url")},
+                                   "telegram_url": site_cfg.get("telegram_url"),
+                                   "pro_url": site_cfg.get("pro_url"),
+                                   "sources": [{"name": s["name"], "url": s["url"]} for s in cfg.get("sources", []) or []],
+                                   "watching": len(cfg.get("watch", []) or [])},
                           "items": items})
     return 0
 

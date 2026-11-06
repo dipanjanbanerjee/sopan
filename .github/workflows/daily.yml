@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "17 2 * * *"   # every day at 07:47 IST (02:17 UTC)
   workflow_dispatch:        # lets you run it by hand from the Actions tab
+    inputs:
+      dry_run:
+        description: "Test only: show what would be posted, post and save nothing"
+        type: boolean
+        default: false
 
 permissions:
   contents: write           # needed to save state/ and docs/data.json back to the repo
@@ -27,12 +32,13 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Check sources and post to Telegram
-        run: python -m sopan.run
+        run: python -m sopan.run ${{ inputs.dry_run && '--dry-run' || '' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
       - name: Save what was seen
+        if: ${{ !inputs.dry_run }}
         run: |
           git config user.name "sopan-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

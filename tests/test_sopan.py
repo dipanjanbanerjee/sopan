@@ -50,6 +50,20 @@ def test_context_kept_when_card_has_employer_link():
     assert "Biology" not in galaxy.context
 
 
+def test_generic_link_text_uses_url_slug():
+    html = '<div><a href="/research/saha-institute-of-nuclear-physics-phd-admission-2027-jan/">View Details</a></div>'
+    (item,) = extract_links(html, "https://inphd.com/", "s", r"/research/[a-z0-9-]+")
+    assert item.title == "Saha Institute Of Nuclear Physics Phd Admission 2027 Jan"
+
+
+def test_classify_field():
+    from sopan.core import classify_field
+    assert classify_field("PhD in Radio Interferometry of Galaxy Clusters") == "Astronomy"
+    assert classify_field("Funded PhD in Quantum Optics") == "Quantum"
+    assert classify_field("PhD: wind turbine generators") == "Engineering"
+    assert classify_field("PhD Studentship: Nonlinear waves on liquid cylinders") == "Physics"
+
+
 def test_keyword_filter():
     items = extract_links(LISTING, BASE, "s", r"/job/[A-Z]{3}\d{3}")
     phd = compile_keywords(["phd", "studentship"])

@@ -2,10 +2,11 @@
 #
 # Keyword lists are regular expressions matched case-insensitively at the start
 # of a word, so "astronom" matches astronomy, astronomer, astronomical.
+# To test a new website from GitHub: Actions tab -> "Probe websites" -> Run workflow.
 
 site:
-  # Your public Telegram channel link (shown as the "Join" button on the web page)
-  telegram_url: https://t.me/SopanAlerts
+  telegram_url: https://t.me/SopanAlerts   # your public channel (the "Join" button)
+  # pro_url: https://forms.gle/...         # Pro waitlist form; until set, the button opens the channel
 
 keywords:
   physics_astro:
@@ -36,8 +37,32 @@ keywords:
     - doctorate
     - first stage researcher
     - r1\b
+  # stricter: wording used for actual PhD openings (for boards that mix jobs and PhDs)
+  phd_position:
+    - phd (?:student|position|candidate|studentship|project|scholarship|fellowship|opportunit|programme|program|researcher|in|on|at)
+    - funded phd
+    - studentship
+    - doctoral (?:candidate|researcher|student|position|fellow|programme|program)
+    - early.stage researcher
+  # words that make a new link on a watched page worth an alert
+  watch_alert:
+    - phd
+    - ph\.d
+    - doctoral
+    - studentship
+    - position
+    - vacanc
+    - admission
+    - project
+    - job
+    - call
+    - recruit
+    - scholarship
+    - fellowship
+    - opening
+    - opportunit
+    - application
 
-# Listings whose TITLE matches any of these are always skipped
 exclude_titles:
   - post-?doc
   - postdoctoral
@@ -47,26 +72,97 @@ exclude_titles:
   - research associate
   - research assistant
   - technician
+  - editor
+  - manager
+  - officer
+  - director
+  - head of
+  - scientist
+
+watch_keywords: watch_alert
 
 # Listing pages checked every day.
 #   link_pattern : regex that every individual job-ad link contains
 #   match_any    : the listing must mention at least one keyword from this list
 #   and_any      : (optional) ...and at least one keyword from this list too
+#   region       : shown as a tag on the web page
 sources:
-  - name: jobs.ac.uk · PhD studentships
+  - name: jobs.ac.uk PhD studentships
     url: https://www.jobs.ac.uk/categories/phd-research-studentship-jobs
     link_pattern: '/job/[A-Z]{3}\d{3}'
     match_any: physics_astro
+    region: UK
 
-  - name: jobs.ac.uk · Physics
+  - name: jobs.ac.uk Physics
     url: https://www.jobs.ac.uk/categories/physics
     link_pattern: '/job/[A-Z]{3}\d{3}'
     match_any: phd
+    region: UK
 
-  # EURAXESS is switched off: it answers automated requests with 403 Forbidden.
+  - name: Nature Careers
+    url: https://www.nature.com/naturecareers/jobs/phd/
+    link_pattern: '/naturecareers/job/\d+'
+    match_any: physics_astro
+    and_any: phd_position
+    region: Worldwide
 
-# Watchlist: any professor, group or department "open positions" page.
-# Sopan alerts when a new link appears on the page. No keywords needed.
-watch: []
-#  - name: Example group — open positions
-#    url: https://example-university.edu/group/positions
+  - name: Times Higher Education
+    url: https://www.timeshighereducation.com/unijobs/listings/physics-and-astronomy/studentships/
+    link_pattern: '/unijobs/listing/\d+'
+    match_any: phd_position
+    region: Worldwide
+
+  - name: ESO
+    url: https://recruitment.eso.org/
+    link_pattern: '/jobs/\d{4}_\d{4}'
+    match_any: [student, studentship, phd]
+    region: Europe
+
+  - name: Astronomical Society of India
+    url: https://astron-soc.in/list-of-jobs
+    link_pattern: '/jobdetails/\d+'
+    match_any: phd
+    region: India
+
+  - name: inPhD India admissions
+    url: https://inphd.com/
+    link_pattern: '/research/[a-z0-9-]+'
+    match_any: physics_astro
+    region: India
+
+  - name: AcademicJobsOnline Physics
+    url: https://academicjobsonline.org/ajo/physics
+    link_pattern: '/ajo/jobs/\d+'
+    match_any: phd_position
+    region: USA
+
+  # Tested and blocked for automated requests (403): EURAXESS, AAS Job Register,
+  # FindAPhD, AcademicPositions, academicjobs.com. AcademicTransfer needs JavaScript.
+
+# Watchlist: institute and group pages. Sopan alerts when a new link appears on the
+# page that looks like an opening (see watch_alert above). Add any page you like.
+watch:
+  - name: NCRA-TIFR PhD programme
+    url: https://www.ncra.tifr.res.in/students/ph-d-programme
+  - name: Raman Research Institute PhD programme
+    url: https://www.rri.res.in/careers/phd-programme
+  - name: IMPRS Astrophysics, Munich
+    url: https://www.imprs-astro.mpg.de/
+  - name: MPIA Heidelberg job board
+    url: https://www.mpia.de/study-and-career/jobboard
+  - name: German Astronomical Society job register
+    url: https://astronomische-gesellschaft.de/en/activities/jobregister
+  - name: Leiden Observatory jobs
+    url: https://local.strw.leidenuniv.nl/jobs/
+  - name: Stockholm University Astronomy
+    url: https://www.su.se/department-of-astronomy/about-the-department/work-with-us
+  - name: Edinburgh Institute for Astronomy PhDs
+    url: https://ifa.roe.ac.uk/phds-jobs-fellowships/phd-studentships
+  - name: UCL Astrophysics PhD projects
+    url: https://www.ucl.ac.uk/mathematical-physical-sciences/astrophysics/postgraduate-study/phd-projects
+  - name: Sussex Astronomy PhD studentships
+    url: https://www.sussex.ac.uk/research/centres/astronomy/phd-studentships
+  - name: Newcastle Maths & Physics funded PhDs
+    url: https://www.ncl.ac.uk/maths-physics/study/postgraduate-research/phd-mphil/fully-funded-projects
+  - name: Bologna Astrophysics PhD
+    url: https://phd.unibo.it/astrophysics/en

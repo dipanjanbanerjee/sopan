@@ -1,0 +1,74 @@
+# Sopan configuration
+#
+# Keyword lists are regular expressions matched case-insensitively at the start
+# of a word, so "astronom" matches astronomy, astronomer, astronomical.
+
+site:
+  # Your public Telegram channel link (shown as the "Join" button on the web page)
+  telegram_url: https://t.me/SopanAlerts
+
+keywords:
+  physics_astro:
+    - astronom
+    - astrophys
+    - physic
+    - cosmolog
+    - radio
+    - galax
+    - stellar
+    - planetary
+    - solar
+    - space
+    - gravitation
+    - quantum
+    - particle
+    - plasma
+    - optic
+    - photon
+    - condensed matter
+    - nuclear
+    - ionosph
+  phd:
+    - phd
+    - ph\.d
+    - studentship
+    - doctoral
+    - doctorate
+    - first stage researcher
+    - r1\b
+
+# Listing pages checked every day.
+#   link_pattern : regex that every individual job-ad link contains
+#   match_any    : the listing must mention at least one keyword from this list
+#   and_any      : (optional) ...and at least one keyword from this list too
+sources:
+  - name: jobs.ac.uk · PhD studentships
+    url: https://www.jobs.ac.uk/categories/phd-research-studentship-jobs
+    link_pattern: '/job/[A-Z]{3}\d{3}'
+    match_any: physics_astro
+
+  - name: jobs.ac.uk · Physics
+    url: https://www.jobs.ac.uk/categories/physics
+    link_pattern: '/job/[A-Z]{3}\d{3}'
+    match_any: phd
+
+  - name: EURAXESS · Astronomy
+    url: https://euraxess.ec.europa.eu/jobs/search?keywords=astronomy
+    link_pattern: '/jobs/\d+'
+    match_any: phd
+
+  - name: EURAXESS · Astrophysics
+    url: https://euraxess.ec.europa.eu/jobs/search?keywords=astrophysics
+    link_pattern: '/jobs/\d+'
+    match_any: phd
+
+  - name: EURAXESS · Physics
+    url: https://euraxess.ec.europa.eu/jobs/search?keywords=physics
+    link_pattern: '/jobs/\d+'
+    match_any: phd
+
+# Watchlist: any professor, group or department "open positions" page.
+# Sopan alerts when a new link appears on the page. No keywords needed.
+watch: []
+#  - name: Example group — open positions
+#    url: https://example-university.edu/group/positions

@@ -1,0 +1,15 @@
+{
+  "name": "Sopan — your next step, on time",
+  "short_name": "Sopan",
+  "description": "PhD positions, fellowships and deadlines, checked every morning.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1b1640",
+  "theme_color": "#1b1640",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

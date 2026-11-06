@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sopan — your next step, on time</title>
+<meta name="description" content="PhD positions, fellowships and deadlines for Indian students, updated daily.">
+<meta name="theme-color" content="#1b1640">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  :root{
+    --bg:#f7f5ef; --card:#ffffff; --ink:#1b1640; --muted:#6b6880; --line:#e7e3d8;
+    --accent:#e8902a; --accent-ink:#1b1640; --soon:#c2410c; --soon-bg:#fdeee4; --ok-bg:#eef0fb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#12101f; --card:#1c1930; --ink:#f1eff8; --muted:#a29fb8; --line:#2c2846;
+           --accent:#f0a24a; --accent-ink:#12101f; --soon:#fb923c; --soon-bg:#3a2216; --ok-bg:#262246; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif}
+  header{background:#1b1640;color:#fff;padding:28px 16px 22px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  header .wrap{padding:0}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:40px;height:40px;border-radius:10px}
+  h1{margin:0;font-size:1.6rem;letter-spacing:.3px}
+  .tag{margin:6px 0 16px;color:#cfcbe6}
+  .join{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:700;
+        padding:10px 16px;border-radius:999px;text-decoration:none}
+  .controls{position:sticky;top:0;background:var(--bg);padding:14px 0 10px;z-index:2;border-bottom:1px solid var(--line)}
+  input[type=search]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);
+        background:var(--card);color:var(--ink);font-size:1rem}
+  .chips{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;
+        border-radius:999px;font-size:.9rem;cursor:pointer}
+  .chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .count{color:var(--muted);font-size:.9rem;margin:12px 0 4px}
+  ul{list-style:none;margin:0;padding:0}
+  li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+  li a.title{color:var(--ink);font-weight:650;text-decoration:none;display:block}
+  li a.title:hover{text-decoration:underline}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-top:8px;color:var(--muted);font-size:.88rem}
+  .badge{padding:2px 9px;border-radius:999px;background:var(--ok-bg);color:var(--ink);font-weight:600;font-size:.82rem}
+  .badge.soon{background:var(--soon-bg);color:var(--soon)}
+  .new{color:var(--accent);font-weight:700}
+  .empty{color:var(--muted);text-align:center;padding:40px 0}
+  footer{color:var(--muted);font-size:.85rem;text-align:center;padding:28px 16px 40px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand"><img src="icon-192.png" alt=""><h1>Sopan</h1></div>
+    <p class="tag">Your next step, on time. PhD positions and deadlines, checked every morning.</p>
+    <a class="join" id="join" href="#" hidden>Get daily alerts on Telegram</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search: radio, cosmology, Germany, Manchester…" aria-label="Search openings">
+    <div class="chips" role="group" aria-label="Filter">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="soon" aria-pressed="false">Closing in 2 weeks</button>
+      <button class="chip" data-f="new" aria-pressed="false">New this week</button>
+    </div>
+  </div>
+  <p class="count" id="count"></p>
+  <ul id="list"></ul>
+</main>
+<footer id="foot">Sopan</footer>
+
+<script>
+const DAY = 86400000;
+const today = new Date(new Date().toDateString());
+let items = [], filter = "all";
+
+const daysLeft = d => Math.round((new Date(d + "T00:00:00") - today) / DAY);
+const fmt = d => new Date(d + "T00:00:00").toLocaleDateString("en-IN", {day: "numeric", month: "short", year: "numeric"});
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function render() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const shown = items.filter(it => {
+    if (q && !(it.title + " " + it.source).toLowerCase().includes(q)) return false;
+    if (filter === "soon") return it.deadline && daysLeft(it.deadline) <= 14;
+    if (filter === "new") return (today - new Date(it.found + "T00:00:00")) / DAY <= 7;
+    return true;
+  });
+  document.getElementById("count").textContent = `${shown.length} opening${shown.length === 1 ? "" : "s"}`;
+  document.getElementById("list").innerHTML = shown.length ? shown.map(it => {
+    const left = it.deadline ? daysLeft(it.deadline) : null;
+    const badge = left === null ? '<span class="badge">No deadline listed</span>'
+      : `<span class="badge${left <= 7 ? " soon" : ""}">${left === 0 ? "Closes today" : left + " days left"} · ${fmt(it.deadline)}</span>`;
+    const isNew = (today - new Date(it.found + "T00:00:00")) / DAY <= 2;
+    return `<li><a class="title" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
+      <div class="meta">${badge}<span>${esc(it.source)}</span>${isNew ? '<span class="new">New</span>' : ""}</div></li>`;
+  }).join("") : '<li class="empty">Nothing matches yet. Try another word.</li>';
+}
+
+document.getElementById("q").addEventListener("input", render);
+document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+  filter = b.dataset.f;
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+  render();
+}));
+
+fetch("data.json", {cache: "no-store"}).then(r => r.json()).then(data => {
+  items = (data.items || []).sort((a, b) => {
+    if (a.deadline && b.deadline) return a.deadline.localeCompare(b.deadline);
+    if (a.deadline) return -1;
+    if (b.deadline) return 1;
+    return b.found.localeCompare(a.found);
+  });
+  const tg = data.meta && data.meta.telegram_url;
+  if (tg) { const j = document.getElementById("join"); j.href = tg; j.hidden = false; }
+  if (data.meta && data.meta.updated) document.getElementById("foot").textContent = `Sopan · updated ${fmt(data.meta.updated)}`;
+  render();
+}).catch(() => {
+  document.getElementById("list").innerHTML = '<li class="empty">Could not load openings. Check your connection.</li>';
+});
+
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

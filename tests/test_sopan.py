@@ -89,7 +89,7 @@ def _run_with(tmp_path, html_pages, sent):
     cfg = tmp_path / "sources.yaml"
     cfg.write_text(
         "keywords:\n  phd: [phd, studentship, doctoral]\n"
-        "exclude_titles: [post-?doc]\n"
+        "exclude_titles: ['post-?doc']\n"
         "sources:\n  - name: J\n    url: https://www.jobs.ac.uk/categories/physics\n"
         "    link_pattern: '/job/[A-Z]{3}\\d{3}'\n    match_any: phd\n"
         "watch:\n  - name: Group page\n    url: https://uni.example/group\n"

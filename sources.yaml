@@ -134,7 +134,7 @@ sources:
     url: https://academicjobsonline.org/ajo/physics
     link_pattern: '/ajo/jobs/\d+'
     match_any: phd_position
-    region: USA
+    region: Worldwide
 
   # Tested and blocked for automated requests (403): EURAXESS, AAS Job Register,
   # FindAPhD, AcademicPositions, academicjobs.com. AcademicTransfer needs JavaScript.

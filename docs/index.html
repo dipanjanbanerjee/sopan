@@ -28,6 +28,7 @@
            --urgent:#ff8a7a; --urgent-bg:#3b1a24; --saffron-ink:#f6c27a; }
   }
   *{box-sizing:border-box}
+  [hidden]{display:none !important}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--sans)}
   a{color:inherit}
@@ -76,8 +77,10 @@
   .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
   .tab{font:500 1rem var(--sans);background:none;border:0;color:var(--muted);padding:10px 12px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
   .tab[aria-selected=true]{color:var(--ink);border-bottom-color:var(--saffron)}
-  .controls{display:grid;gap:10px;padding:16px 0 6px}
-  @media (min-width:760px){ .controls{grid-template-columns:2fr 1fr 1fr 1fr} }
+  .controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:16px 0 6px}
+  .controls #q{grid-column:1 / -1}
+  @media (max-width:420px){ .controls select{font-size:.88rem;padding:10px 26px 10px 10px} }
+  @media (min-width:760px){ .controls{grid-template-columns:2fr 1fr 1fr 1fr;gap:10px} .controls #q{grid-column:auto} }
   .controls input,.controls select{width:100%;font:1rem var(--sans);color:var(--ink);background:var(--card);
         border:1px solid var(--line);border-radius:10px;padding:11px 12px;appearance:none}
   .controls select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
@@ -173,11 +176,11 @@
     <label class="visually-hidden" for="q">Search openings</label>
     <input type="search" id="q" placeholder="Search a topic, university or country">
     <label class="visually-hidden" for="field">Field</label>
-    <select id="field"><option value="">All fields</option></select>
+    <select id="field"><option value="">Any field</option></select>
     <label class="visually-hidden" for="region">Region</label>
-    <select id="region"><option value="">All regions</option></select>
+    <select id="region"><option value="">Any region</option></select>
     <label class="visually-hidden" for="sort">Sort</label>
-    <select id="sort"><option value="deadline">Deadline first</option><option value="new">Newest first</option></select>
+    <select id="sort"><option value="deadline">By deadline</option><option value="new">Newest</option></select>
   </div>
   <p class="count" id="count" aria-live="polite"></p>
   <div class="shortlist-tools" id="saved-tools" hidden>

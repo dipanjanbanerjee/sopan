@@ -88,7 +88,8 @@ def test_format_escapes_html():
 def _run_with(tmp_path, html_pages, sent):
     cfg = tmp_path / "sources.yaml"
     cfg.write_text(
-        "keywords:\n  phd: [phd, studentship]\n"
+        "keywords:\n  phd: [phd, studentship, doctoral]\n"
+        "exclude_titles: [post-?doc]\n"
         "sources:\n  - name: J\n    url: https://www.jobs.ac.uk/categories/physics\n"
         "    link_pattern: '/job/[A-Z]{3}\\d{3}'\n    match_any: phd\n"
         "watch:\n  - name: Group page\n    url: https://uni.example/group\n"
@@ -111,10 +112,12 @@ def test_first_run_silent_then_posts_only_new(tmp_path):
     data = json.loads((tmp_path / "docs" / "data.json").read_text())
     assert len(data["items"]) == 2  # already-open PhDs still show on the web page
 
-    newer = LISTING.replace("</ul>", '<li><a href="/job/DTZ999/phd-cosmology">PhD in Cosmology</a> Closes 1 Dec</li></ul>')
+    newer = LISTING.replace("</ul>", '<li><a href="/job/DTZ999/phd-cosmology">PhD in Cosmology</a> Closes 1 Dec</li>'
+                                     '<li><a href="/job/DTZ998/pd">Post-Doctoral Researcher in Optics</a></li></ul>')
     _run_with(tmp_path, [newer, group_v2], sent)
     text = "\n".join(sent)
     assert "PhD in Cosmology" in text and "Radio Astronomy" not in text
+    assert "Post-Doctoral" not in text  # excluded by title
     assert "New PhD position in pulsars" in text and "Watchlist" in text
 
     sent.clear()

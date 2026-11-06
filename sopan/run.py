@@ -54,13 +54,13 @@ def resolve(spec, profiles: dict):
     return compile_keywords(words)
 
 
-def scan(src: dict, profiles: dict, today: date, is_watch: bool) -> list[Item]:
+def scan(src: dict, profiles: dict, today: date, is_watch: bool, exclude=None) -> list[Item]:
     html = fetch(src["url"])
     found = extract_links(html, src["url"], src["name"], src.get("link_pattern"))
     if is_watch:
         return found
     m_any, a_any = resolve(src.get("match_any"), profiles), resolve(src.get("and_any"), profiles)
-    kept = [i for i in found if matches(i, m_any, a_any)]
+    kept = [i for i in found if matches(i, m_any, a_any) and not (exclude and exclude.search(i.title))]
     for i in kept:
         i.deadline = parse_deadline(i.context, today)
     print(f"  {src['name']}: {len(found)} listings, {len(kept)} match")
@@ -77,6 +77,7 @@ def main(argv=None) -> int:
 
     cfg = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
     profiles = cfg.get("keywords", {})
+    exclude = resolve(cfg.get("exclude_titles") or None, profiles)
     today = date.today()
 
     state_path, data_path = ROOT / "state" / "seen.json", ROOT / "docs" / "data.json"
@@ -97,7 +98,7 @@ def main(argv=None) -> int:
     for src, is_watch in all_sources:
         key = ("watch:" if is_watch else "") + src["name"]
         try:
-            items = scan(src, profiles, today, is_watch)
+            items = scan(src, profiles, today, is_watch, exclude)
         except Exception as e:  # one bad site must not stop the rest
             failures += 1
             print(f"  ❌ {src['name']}: {e}")
@@ -166,6 +167,8 @@ def main(argv=None) -> int:
 
     # prune and save
     def keep(it):
+        if exclude and exclude.search(it["title"]):
+            return False
         if it.get("deadline"):
             return date.fromisoformat(it["deadline"]) >= today
         return date.fromisoformat(it["found"]) >= today - timedelta(days=KEEP_UNDATED_DAYS)

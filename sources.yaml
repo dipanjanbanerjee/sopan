@@ -37,6 +37,17 @@ keywords:
     - first stage researcher
     - r1\b
 
+# Listings whose TITLE matches any of these are always skipped
+exclude_titles:
+  - post-?doc
+  - postdoctoral
+  - lecturer
+  - professor
+  - fellow\b
+  - research associate
+  - research assistant
+  - technician
+
 # Listing pages checked every day.
 #   link_pattern : regex that every individual job-ad link contains
 #   match_any    : the listing must mention at least one keyword from this list
@@ -52,20 +63,7 @@ sources:
     link_pattern: '/job/[A-Z]{3}\d{3}'
     match_any: phd
 
-  - name: EURAXESS · Astronomy
-    url: https://euraxess.ec.europa.eu/jobs/search?keywords=astronomy
-    link_pattern: '/jobs/\d+'
-    match_any: phd
-
-  - name: EURAXESS · Astrophysics
-    url: https://euraxess.ec.europa.eu/jobs/search?keywords=astrophysics
-    link_pattern: '/jobs/\d+'
-    match_any: phd
-
-  - name: EURAXESS · Physics
-    url: https://euraxess.ec.europa.eu/jobs/search?keywords=physics
-    link_pattern: '/jobs/\d+'
-    match_any: phd
+  # EURAXESS is switched off: it answers automated requests with 403 Forbidden.
 
 # Watchlist: any professor, group or department "open positions" page.
 # Sopan alerts when a new link appears on the page. No keywords needed.

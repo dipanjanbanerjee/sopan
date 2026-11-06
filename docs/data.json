@@ -1,7 +1,43 @@
 {
  "meta": {
   "updated": "2026-11-06",
-  "telegram_url": "https://t.me/SopanAlerts"
+  "telegram_url": "https://t.me/SopanAlerts",
+  "pro_url": null,
+  "sources": [
+   {
+    "name": "jobs.ac.uk PhD studentships",
+    "url": "https://www.jobs.ac.uk/categories/phd-research-studentship-jobs"
+   },
+   {
+    "name": "jobs.ac.uk Physics",
+    "url": "https://www.jobs.ac.uk/categories/physics"
+   },
+   {
+    "name": "Nature Careers",
+    "url": "https://www.nature.com/naturecareers/jobs/phd/"
+   },
+   {
+    "name": "Times Higher Education",
+    "url": "https://www.timeshighereducation.com/unijobs/listings/physics-and-astronomy/studentships/"
+   },
+   {
+    "name": "ESO",
+    "url": "https://recruitment.eso.org/"
+   },
+   {
+    "name": "Astronomical Society of India",
+    "url": "https://astron-soc.in/list-of-jobs"
+   },
+   {
+    "name": "inPhD India admissions",
+    "url": "https://inphd.com/"
+   },
+   {
+    "name": "AcademicJobsOnline Physics",
+    "url": "https://academicjobsonline.org/ajo/physics"
+   }
+  ],
+  "watching": 12
  },
  "items": [
   {
@@ -10,7 +46,9 @@
    "title": "PhD Studentship: The Physics of Learning in Robotic Metamaterials",
    "source": "jobs.ac.uk PhD studentships",
    "deadline": "2027-01-06",
-   "found": "2026-11-06"
+   "found": "2026-11-06",
+   "field": "Condensed matter",
+   "region": "UK"
   },
   {
    "id": "www.jobs.ac.uk/job/DTO086",
@@ -18,7 +56,9 @@
    "title": "PhD Studentship in Aeronautics: Real-time Data Assimilation for Multi-physics Flows (AE0095)",
    "source": "jobs.ac.uk PhD studentships",
    "deadline": "2027-01-04",
-   "found": "2026-11-06"
+   "found": "2026-11-06",
+   "field": "Engineering",
+   "region": "UK"
   },
   {
    "id": "www.jobs.ac.uk/job/DTN977",
@@ -26,7 +66,9 @@
    "title": "PhD Studentship in Aeronautics: Programmable matter from entangled architected materials (AE0088)",
    "source": "jobs.ac.uk Physics",
    "deadline": "2027-01-04",
-   "found": "2026-11-06"
+   "found": "2026-11-06",
+   "field": "Quantum",
+   "region": "UK"
   },
   {
    "id": "www.jobs.ac.uk/job/DTN743",
@@ -34,7 +76,9 @@
    "title": "PhD Studentship: Nonlinear waves on liquid cylinders",
    "source": "jobs.ac.uk Physics",
    "deadline": "2026-11-30",
-   "found": "2026-11-06"
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "UK"
   },
   {
    "id": "www.jobs.ac.uk/job/DTN740",
@@ -42,7 +86,179 @@
    "title": "PhD Studentship: AI-Driven fault diagnosis for wind turbine generators",
    "source": "jobs.ac.uk Physics",
    "deadline": "2026-11-30",
-   "found": "2026-11-06"
+   "found": "2026-11-06",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "www.timeshighereducation.com/unijobs/listing/417454",
+   "url": "https://www.timeshighereducation.com/unijobs/listing/417454/phd-position-on-arctic-energy-budget-diagnostics-at-vinar/?LinkSource=PremiumListing",
+   "title": "PhD Position on Arctic Energy Budget Diagnostics at VINAR",
+   "source": "Times Higher Education",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "Worldwide"
+  },
+  {
+   "id": "www.timeshighereducation.com/unijobs/listing/417398",
+   "url": "https://www.timeshighereducation.com/unijobs/listing/417398/uncovering-the-electronic-origins-of-magnetic-resonance-phd-position-in-theoretical-chemistry/?LinkSource=PremiumListing",
+   "title": "Uncovering the Electronic Origins of Magnetic Resonance PhD Position in Theoretical Chemistry",
+   "source": "Times Higher Education",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Condensed matter",
+   "region": "Worldwide"
+  },
+  {
+   "id": "astron-soc.in/jobdetails/130",
+   "url": "https://astron-soc.in/jobdetails/130",
+   "title": "RRI PhD positions in astronomy & astrophysics",
+   "source": "Astronomical Society of India",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Astronomy",
+   "region": "India"
+  },
+  {
+   "id": "astron-soc.in/jobdetails/128",
+   "url": "https://astron-soc.in/jobdetails/128",
+   "title": "PhD positions at SINP, Kolkata",
+   "source": "Astronomical Society of India",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "India"
+  },
+  {
+   "id": "astron-soc.in/jobdetails/127",
+   "url": "https://astron-soc.in/jobdetails/127",
+   "title": "PhD position at DAASE, IIT Indore",
+   "source": "Astronomical Society of India",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "India"
+  },
+  {
+   "id": "astron-soc.in/jobdetails/126",
+   "url": "https://astron-soc.in/jobdetails/126",
+   "title": "PhD positions at MCNS with Dr TMA Pai Fellowship",
+   "source": "Astronomical Society of India",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "India"
+  },
+  {
+   "id": "astron-soc.in/jobdetails/116",
+   "url": "https://astron-soc.in/jobdetails/116",
+   "title": "Ph.D. Positions in Cosmology (2 Positions)",
+   "source": "Astronomical Society of India",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Astronomy",
+   "region": "India"
+  },
+  {
+   "id": "inphd.com/research/saha-institute-of-nuclear-physics-sinp-phd-admission-2027-jan",
+   "url": "https://inphd.com/research/saha-institute-of-nuclear-physics-sinp-phd-admission-2027-jan/",
+   "title": "Saha Institute Of Nuclear Physics Sinp Phd Admission 2027 Jan",
+   "source": "inPhD India admissions",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Particle & nuclear",
+   "region": "India"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/31848",
+   "url": "https://academicjobsonline.org/ajo/jobs/31848",
+   "title": "PhD position, Ariel University, Israel",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "Worldwide"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/32964",
+   "url": "https://academicjobsonline.org/ajo/jobs/32964",
+   "title": "Master internship and PhD position in quantum gravity and cosmology",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Astronomy",
+   "region": "Worldwide"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/33211",
+   "url": "https://academicjobsonline.org/ajo/jobs/33211",
+   "title": "ERC-funded PhD Positions in in Theoretical Developments for searches of high frequency gravitational waves in cavities",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Astronomy",
+   "region": "Worldwide"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/33213",
+   "url": "https://academicjobsonline.org/ajo/jobs/33213",
+   "title": "PhD Fellowship in Theoretical and Gravitational Wave Astrophysics",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Astronomy",
+   "region": "Worldwide"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/32852",
+   "url": "https://academicjobsonline.org/ajo/jobs/32852",
+   "title": "Expression of interest for ERC-funded PhD position",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "Worldwide"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/32719",
+   "url": "https://academicjobsonline.org/ajo/jobs/32719",
+   "title": "PhD Fellowship",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "Worldwide"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/33103",
+   "url": "https://academicjobsonline.org/ajo/jobs/33103",
+   "title": "PhD Student - Department of Theoretical Physics, University of Geneva",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Physics",
+   "region": "Worldwide"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/33142",
+   "url": "https://academicjobsonline.org/ajo/jobs/33142",
+   "title": "PhD Student in Quantum Materials",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Quantum",
+   "region": "Worldwide"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/33140",
+   "url": "https://academicjobsonline.org/ajo/jobs/33140",
+   "title": "PhD positions in Cosmology",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-06",
+   "field": "Astronomy",
+   "region": "Worldwide"
   }
  ]
 }

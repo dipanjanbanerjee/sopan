@@ -99,7 +99,10 @@ def test_format_escapes_html():
     assert "&lt;AI&gt; &amp; Stars" in out and "3 days left" in out and "x=1&amp;y=2" in out
 
 
-def _run_with(tmp_path, html_pages, sent):
+MORNING = run.datetime(2026, 11, 6, 8, 0, tzinfo=run.IST)
+
+
+def _run_with(tmp_path, html_pages, sent, now=MORNING):
     cfg = tmp_path / "sources.yaml"
     cfg.write_text(
         "keywords:\n  phd: [phd, studentship, doctoral]\n"
@@ -110,6 +113,7 @@ def _run_with(tmp_path, html_pages, sent):
     )
     pages = iter(html_pages)
     with mock.patch.object(run, "ROOT", tmp_path), \
+         mock.patch.object(run, "now_ist", lambda: now), \
          mock.patch.object(run, "fetch", lambda url: next(pages)), \
          mock.patch.object(run.time, "sleep", lambda s: None), \
          mock.patch.object(run.tg, "send", lambda t, c, m: sent.append(m)), \
@@ -121,8 +125,8 @@ def test_first_run_silent_then_posts_only_new(tmp_path):
     group_v1 = '<a href="/group/people">People of the group</a>'
     group_v2 = group_v1 + '<a href="/group/phd-2027">New PhD position in pulsars</a>'
     sent = []
-    _run_with(tmp_path, [LISTING, group_v1], sent)
-    assert sent == []  # first scan records, posts nothing
+    _run_with(tmp_path, [LISTING, group_v1], sent, now=MORNING.replace(hour=6))
+    assert sent == []  # first scan records, posts nothing (and it's before digest time)
     data = json.loads((tmp_path / "docs" / "data.json").read_text())
     assert len(data["items"]) == 2  # already-open PhDs still show on the web page
 
@@ -136,7 +140,19 @@ def test_first_run_silent_then_posts_only_new(tmp_path):
 
     sent.clear()
     _run_with(tmp_path, [newer, group_v2], sent)
-    assert sent == []  # nothing new, nothing posted
+    assert sent == []  # nothing new, and today already had a post: stay quiet
+
+
+def test_quiet_day_gets_one_digest(tmp_path):
+    sent = []
+    _run_with(tmp_path, [LISTING, ""], sent, now=MORNING.replace(hour=6))
+    assert sent == []
+    _run_with(tmp_path, [LISTING, ""], sent)  # 08:00, nothing new -> digest
+    assert len(sent) == 1 and "No new openings" in sent[0] and "Radio Astronomy" in sent[0]
+    _run_with(tmp_path, [LISTING, ""], sent, now=MORNING.replace(hour=14))
+    assert len(sent) == 1  # only one digest per day
+    _run_with(tmp_path, [LISTING, ""], sent, now=MORNING + run.timedelta(days=1))
+    assert len(sent) == 2  # next day, another digest
 
 
 def test_code_titles_and_view_details_prefix():

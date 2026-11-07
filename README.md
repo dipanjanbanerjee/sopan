@@ -4,12 +4,13 @@ Sopan checks PhD listings every morning and posts new openings, deadline reminde
 and watchlist changes to Telegram. It also publishes an installable web page.
 Everything runs free on GitHub.
 
-## What it does each day (07:47 IST)
+## What it does (07:47, 13:47 and 19:47 IST)
 1. Opens each listing page in `sources.yaml` and picks out the job ads.
 2. Keeps the ones that match your keywords (e.g. astronomy + PhD) and reads their deadlines.
 3. Posts **new** ones to your Telegram channel, plus **"Closing soon"** reminders 3 days before deadlines.
 4. Checks every **watchlist** page and alerts you when a new link appears.
 5. Updates the web page (`docs/`).
+6. On a day with nothing new, posts one short morning digest of the deadlines closing soonest.
 
 The very first check of each source only records what is already there (shown on the web page),
 so your channel isn't flooded with hundreds of old listings.

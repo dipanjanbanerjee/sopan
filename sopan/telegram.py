@@ -25,6 +25,24 @@ def format_item(it: dict, today: date | None = None) -> str:
     return "\n".join(lines)
 
 
+def format_digest(items: list[dict], today: date, site: str | None, show: int = 5) -> str:
+    """Morning message for days with nothing new, so the channel never goes silent."""
+    open_now = [i for i in items if not i.get("deadline") or date.fromisoformat(i["deadline"]) >= today]
+    soon = sorted((i for i in open_now if i.get("deadline")), key=lambda i: i["deadline"])[:show]
+    lines = [f"☀️ <b>Sopan · {today:%d %b}</b>",
+             f"No new openings since the last update. {len(open_now)} PhD openings are open right now."]
+    if soon:
+        lines.append("\n<b>Closing soonest</b>")
+        for i in soon:
+            days = (date.fromisoformat(i["deadline"]) - today).days
+            when = "today" if days == 0 else "1 day" if days == 1 else f"{days} days"
+            title = i["title"] if len(i["title"]) <= 90 else i["title"][:87].rsplit(" ", 1)[0] + "…"
+            lines.append(f'⏳ {when} · <a href="{html.escape(i["url"])}">{esc(title)}</a>')
+    if site:
+        lines.append(f'\n🔗 <a href="{html.escape(site)}">See all openings</a>')
+    return "\n".join(lines)
+
+
 def chunk(blocks: list[str], header: str = "") -> list[str]:
     msgs, cur = [], header
     for b in blocks:

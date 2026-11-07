@@ -154,7 +154,7 @@
     <div class="hero-grid">
       <div>
         <h1>Your next steps</h1>
-        <p class="lede" id="lede">PhD openings in physics and astronomy, collected from job boards and institutes every morning, ordered by deadline.</p>
+        <p class="lede" id="lede">PhD openings in physics and astronomy, collected from job boards and institutes three times a day, ordered by deadline.</p>
         <dl class="facts" id="facts"></dl>
       </div>
       <div>
@@ -191,7 +191,7 @@
   <section class="band" aria-labelledby="how-h">
     <h2 id="how-h">How Sopan works</h2>
     <ol class="how">
-      <li><h3>It reads the boards for you</h3><p id="how-1">Every morning at 7:47 Sopan checks PhD job boards and institute pages and keeps the openings in physics and astronomy.</p></li>
+      <li><h3>It reads the boards for you</h3><p id="how-1">Three times a day Sopan checks PhD job boards and institute pages and keeps the openings in physics and astronomy.</p></li>
       <li><h3>New openings reach Telegram</h3><p>Each new position is posted to the channel with its deadline, so it reaches you within a day of being advertised.</p></li>
       <li><h3>You get reminded in time</h3><p>Three days before a deadline Sopan posts a reminder. Save openings here and add them to your phone's calendar.</p></li>
     </ol>
@@ -386,7 +386,7 @@
     const srcs = meta.sources || [];
     $("#srcs").innerHTML = srcs.map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a></li>`).join("")
       + (meta.watching ? `<li>and ${meta.watching} institute pages</li>` : "");
-    if (srcs.length) $("#how-1").textContent = `Every morning at 7:47 Sopan checks ${srcs.length} PhD job boards and ${meta.watching || 0} institute pages, and keeps the openings in physics and astronomy.`;
+    if (srcs.length) $("#how-1").textContent = `Three times a day Sopan checks ${srcs.length} PhD job boards and ${meta.watching || 0} institute pages, and keeps the openings in physics and astronomy.`;
     if (meta.updated) $("#updated").textContent = `Last checked ${fmt(meta.updated)}.`;
     facts(meta); stairs(); render();
   }).catch(() => {

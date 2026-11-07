@@ -11,7 +11,7 @@ import json
 import os
 import sys
 import time
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
@@ -23,6 +23,12 @@ ROOT = Path(__file__).resolve().parent.parent
 MAX_POSTS = 40           # openings posted per run; the rest are on the web page
 REMIND_DAYS = 3          # "closing soon" reminder this many days before a deadline
 KEEP_UNDATED_DAYS = 60   # undated openings stay on the web page this long
+DIGEST_FROM_HOUR = 7     # a quiet day gets one digest message, from this hour (IST) on
+IST = timezone(timedelta(hours=5, minutes=30))
+
+
+def now_ist() -> datetime:
+    return datetime.now(IST)
 
 
 def load_json(path: Path, default):
@@ -80,7 +86,8 @@ def main(argv=None) -> int:
     exclude = resolve(cfg.get("exclude_titles") or None, profiles)
     watch_kw = resolve(cfg.get("watch_keywords") or None, profiles)
     region_of = {s["name"]: s.get("region", "") for s in cfg.get("sources", []) or []}
-    today = date.today()
+    now = now_ist()
+    today = now.date()
 
     state_path, data_path = ROOT / "state" / "seen.json", ROOT / "docs" / "data.json"
     state = load_json(state_path, {"initialized": [], "seen": {}})
@@ -157,6 +164,9 @@ def main(argv=None) -> int:
         blocks = [f"👀 <b>{tg.esc(w.source)}</b> has a new link:\n"
                   f'<a href="{tg.esc(w.url)}">{tg.esc(w.title)}</a>' for w in watch_hits]
         messages += tg.chunk(blocks, "🔔 <b>Watchlist update</b>")
+    if not messages and state.get("last_post") != today.isoformat() and now.hour >= DIGEST_FROM_HOUR:
+        visible = [i for i in web.values() if not (exclude and exclude.search(i["title"]))]
+        messages.append(tg.format_digest(visible, today, site))
 
     if args.dry_run:
         print(f"\n--- DRY RUN: {len(new_items)} openings, {len(reminders)} reminders, "
@@ -167,6 +177,8 @@ def main(argv=None) -> int:
 
     for m in messages:
         tg.send(token, chat, m)
+    if messages:
+        state["last_post"] = today.isoformat()
     print(f"Posted {len(messages)} message(s): {len(new_items)} new, {len(reminders)} reminders, {len(watch_hits)} watch.")
 
     # prune and save
@@ -183,7 +195,7 @@ def main(argv=None) -> int:
         if not i.get("region"):
             i["region"] = region_of.get(i["source"], "")
     seen = dict(sorted(state["seen"].items(), key=lambda kv: kv[1], reverse=True)[:20000])
-    save_json(state_path, {"initialized": state["initialized"], "seen": seen})
+    save_json(state_path, {"initialized": state["initialized"], "seen": seen, "last_post": state.get("last_post")})
     site_cfg = cfg.get("site", {})
     save_json(data_path, {"meta": {"updated": today.isoformat(),
                                    "telegram_url": site_cfg.get("telegram_url"),

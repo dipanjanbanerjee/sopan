@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -41,16 +41,6 @@
  },
  "items": [
   {
-   "id": "www.jobs.ac.uk/job/DTO116",
-   "url": "https://www.jobs.ac.uk/job/DTO116/phd-studentship-in-aeronautics-parallel-adaptive-multi-physics-simulations-ae0097",
-   "title": "PhD Studentship in Aeronautics: Parallel Adaptive Multi-physics Simulations (AE0097)",
-   "source": "jobs.ac.uk PhD studentships",
-   "deadline": "2027-01-04",
-   "found": "2026-11-07",
-   "field": "Engineering",
-   "region": "UK"
-  },
-  {
    "id": "www.jobs.ac.uk/job/DTN744",
    "url": "https://www.jobs.ac.uk/job/DTN744/phd-studentship-the-physics-of-learning-in-robotic-metamaterials",
    "title": "PhD Studentship: The Physics of Learning in Robotic Metamaterials",
@@ -58,26 +48,6 @@
    "deadline": "2027-01-06",
    "found": "2026-11-06",
    "field": "Condensed matter",
-   "region": "UK"
-  },
-  {
-   "id": "www.jobs.ac.uk/job/DTO086",
-   "url": "https://www.jobs.ac.uk/job/DTO086/phd-studentship-in-aeronautics-real-time-data-assimilation-for-multi-physics-flows-ae0095",
-   "title": "PhD Studentship in Aeronautics: Real-time Data Assimilation for Multi-physics Flows (AE0095)",
-   "source": "jobs.ac.uk PhD studentships",
-   "deadline": "2027-01-04",
-   "found": "2026-11-06",
-   "field": "Engineering",
-   "region": "UK"
-  },
-  {
-   "id": "www.jobs.ac.uk/job/DTN977",
-   "url": "https://www.jobs.ac.uk/job/DTN977/phd-studentship-in-aeronautics-programmable-matter-from-entangled-architected-materials-ae0088",
-   "title": "PhD Studentship in Aeronautics: Programmable matter from entangled architected materials (AE0088)",
-   "source": "jobs.ac.uk Physics",
-   "deadline": "2027-01-04",
-   "found": "2026-11-06",
-   "field": "Quantum",
    "region": "UK"
   },
   {
@@ -91,16 +61,6 @@
    "region": "UK"
   },
   {
-   "id": "www.jobs.ac.uk/job/DTN740",
-   "url": "https://www.jobs.ac.uk/job/DTN740/phd-studentship-ai-driven-fault-diagnosis-for-wind-turbine-generators",
-   "title": "PhD Studentship: AI-Driven fault diagnosis for wind turbine generators",
-   "source": "jobs.ac.uk Physics",
-   "deadline": "2026-11-30",
-   "found": "2026-11-06",
-   "field": "Engineering",
-   "region": "UK"
-  },
-  {
    "id": "www.timeshighereducation.com/unijobs/listing/417454",
    "url": "https://www.timeshighereducation.com/unijobs/listing/417454/phd-position-on-arctic-energy-budget-diagnostics-at-vinar/?LinkSource=PremiumListing",
    "title": "PhD Position on Arctic Energy Budget Diagnostics at VINAR",
@@ -108,16 +68,6 @@
    "deadline": null,
    "found": "2026-11-06",
    "field": "Physics",
-   "region": "Worldwide"
-  },
-  {
-   "id": "www.timeshighereducation.com/unijobs/listing/417398",
-   "url": "https://www.timeshighereducation.com/unijobs/listing/417398/uncovering-the-electronic-origins-of-magnetic-resonance-phd-position-in-theoretical-chemistry/?LinkSource=PremiumListing",
-   "title": "Uncovering the Electronic Origins of Magnetic Resonance PhD Position in Theoretical Chemistry",
-   "source": "Times Higher Education",
-   "deadline": null,
-   "found": "2026-11-06",
-   "field": "Condensed matter",
    "region": "Worldwide"
   },
   {

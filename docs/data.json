@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,16 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTO116",
+   "url": "https://www.jobs.ac.uk/job/DTO116/phd-studentship-in-aeronautics-parallel-adaptive-multi-physics-simulations-ae0097",
+   "title": "PhD Studentship in Aeronautics: Parallel Adaptive Multi-physics Simulations (AE0097)",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2027-01-04",
+   "found": "2026-11-07",
+   "field": "Engineering",
+   "region": "UK"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTN744",
    "url": "https://www.jobs.ac.uk/job/DTN744/phd-studentship-the-physics-of-learning-in-robotic-metamaterials",

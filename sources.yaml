@@ -78,6 +78,10 @@ exclude_titles:
   - director
   - head of
   - scientist
+  # out of scope for a physics & astronomy channel
+  - aeronautic
+  - turbine
+  - chemistry
 
 watch_keywords: watch_alert
 

@@ -43,6 +43,21 @@ def format_digest(items: list[dict], today: date, site: str | None, show: int = 
     return "\n".join(lines)
 
 
+def format_roundup(items: list[dict], today: date, site: str | None) -> list[str]:
+    """Everything open right now, by deadline: one compact line per opening."""
+    open_now = [i for i in items if not i.get("deadline") or date.fromisoformat(i["deadline"]) >= today]
+    open_now.sort(key=lambda i: i.get("deadline") or "9999")
+    blocks = []
+    for i in open_now:
+        when = date.fromisoformat(i["deadline"]).strftime("%d %b") if i.get("deadline") else "Open"
+        blocks.append(f'⏳ <b>{when}</b> · <a href="{html.escape(i["url"])}">{esc(i["title"])}</a>\n'
+                      f'      <i>{esc(i["source"])}</i>')
+    if site:
+        blocks.append(f'🔗 <a href="{html.escape(site)}">Search, save and add deadlines to your calendar</a>')
+    header = f"📚 <b>All {len(open_now)} PhD openings open right now</b> · {today:%d %b}\nSorted by deadline."
+    return chunk(blocks, header)
+
+
 def chunk(blocks: list[str], header: str = "") -> list[str]:
     msgs, cur = [], header
     for b in blocks:

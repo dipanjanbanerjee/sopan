@@ -9,6 +9,10 @@ on:
         description: "Test only: show what would be posted, post and save nothing"
         type: boolean
         default: false
+      roundup:
+        description: "Post every opening that is open right now (one-time list)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write           # needed to save state/ and docs/data.json back to the repo
@@ -32,7 +36,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Check sources and post to Telegram
-        run: python -m sopan.run ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: python -m sopan.run ${{ inputs.dry_run && '--dry-run' || '' }} ${{ inputs.roundup && '--roundup' || '' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

@@ -79,6 +79,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", help="print instead of posting; change no files")
     ap.add_argument("--config", default=str(ROOT / "sources.yaml"))
+    ap.add_argument("--roundup", action="store_true", help="post every opening open right now, then stop")
     args = ap.parse_args(argv)
 
     cfg = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
@@ -98,6 +99,12 @@ def main(argv=None) -> int:
     if not args.dry_run and not (token and chat):
         print("TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set (or use --dry-run).")
         return 2
+
+    if args.roundup:
+        visible = [i for i in web.values() if not (exclude and exclude.search(i["title"]))]
+        for m in tg.format_roundup(visible, today, web_url(cfg)):
+            print(m, "\n" + "-" * 40) if args.dry_run else tg.send(token, chat, m)
+        return 0
 
     new_items: list[Item] = []
     watch_hits: list[Item] = []

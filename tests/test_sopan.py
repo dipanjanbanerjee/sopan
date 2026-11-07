@@ -165,3 +165,15 @@ def test_code_titles_and_view_details_prefix():
     assert t["111"] == "University of Geneva, Theoretical Physics, PhD position in quantum theory"
     assert t["222"] == "ASTRO27PHD"   # nothing better available: keep the code
     assert t["333"] == "PhD Position on Arctic Energy Budget"
+
+
+def test_roundup_lists_open_items_by_deadline():
+    items = [
+        {"title": "Late", "url": "https://x/1", "source": "S", "deadline": "2027-01-04"},
+        {"title": "Soon <b>", "url": "https://x/2", "source": "S", "deadline": "2026-11-10"},
+        {"title": "Closed", "url": "https://x/3", "source": "S", "deadline": "2026-11-01"},
+        {"title": "Undated", "url": "https://x/4", "source": "S", "deadline": None},
+    ]
+    (msg,) = tg.format_roundup(items, TODAY, "https://site/")
+    assert "All 3 PhD openings" in msg and "Closed" not in msg and "&lt;b&gt;" in msg
+    assert msg.index("Soon") < msg.index("Late") < msg.index("Undated")

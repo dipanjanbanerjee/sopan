@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,66 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTP026",
+   "url": "https://www.jobs.ac.uk/job/DTP026/phd-studentship-non-equilibrium-quantum-many-body-dynamics",
+   "title": "PhD Studentship: Non-equilibrium quantum many-body dynamics",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2027-01-11",
+   "found": "2026-11-10",
+   "field": "Astronomy",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP039",
+   "url": "https://www.jobs.ac.uk/job/DTP039/phd-studentship-centa-2027-b08-less-emission-more-aerosol-how-elevated-co2-changes-organic-gas-emissions-from-forests-and-their-capacity-to-form-particles",
+   "title": "PhD Studentship: CENTA 2027-B08 Less emission, more aerosol How elevated CO2 changes organic gas emissions from forests and their capacity to form particles",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2027-01-06",
+   "found": "2026-11-10",
+   "field": "Particle & nuclear",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP029",
+   "url": "https://www.jobs.ac.uk/job/DTP029/phd-studentship-light-at-the-atomic-scale-a-phd-in-single-molecule-nanophotonics",
+   "title": "PhD Studentship: Light at the Atomic Scale: A PhD in Single-Molecule Nanophotonics",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2027-01-12",
+   "found": "2026-11-10",
+   "field": "Astronomy",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP041",
+   "url": "https://www.jobs.ac.uk/job/DTP041/phd-studentship-studying-the-langlands-program-via-formalisation-and-ai",
+   "title": "PhD Studentship: Studying the Langlands program via formalisation and AI",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2027-02-24",
+   "found": "2026-11-10",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTO950",
+   "url": "https://www.jobs.ac.uk/job/DTO950/phd-studentship-high-fidelity-electromagnetic-thermal-modelling-of-litz-windings-for-next-generation-cryogenic-machines",
+   "title": "PhD Studentship: : High-Fidelity Electromagnetic-Thermal Modelling of Litz Windings for Next-Generation Cryogenic Machines",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-02-09",
+   "found": "2026-11-10",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP073",
+   "url": "https://www.jobs.ac.uk/job/DTP073/phd-studentship-automating-behavioural-observation-to-understand-the-effects-of-the-environment-on-health-fse-phd-presidents-doctoral-scholarship",
+   "title": "PhD Studentship - Automating Behavioural Observation to Understand the Effects of the Environment on Health - [FSE PhD President's Doctoral Scholarship]",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-18",
+   "found": "2026-11-10",
+   "field": "Physics",
+   "region": "UK"
+  },
   {
    "id": "www.timeshighereducation.com/unijobs/listing/417473",
    "url": "https://www.timeshighereducation.com/unijobs/listing/417473/university-assistant-predoctoral-phd-candidate-physics/?LinkSource=PremiumListing",

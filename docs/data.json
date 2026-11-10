@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,76 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTO484",
+   "url": "https://www.jobs.ac.uk/job/DTO484/phd-studentship-terahertz-photons-for-quantum-control-and-topological-quantum-information",
+   "title": "PhD Studentship: Terahertz Photons for Quantum Control and Topological Quantum Information",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2027-01-08",
+   "found": "2026-11-11",
+   "field": "Astronomy",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTO967",
+   "url": "https://www.jobs.ac.uk/job/DTO967/phd-studentships-epsrc-cdt-in-applied-quantum-technologies",
+   "title": "PhD Studentships: EPSRC CDT in Applied Quantum Technologies",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2027-01-31",
+   "found": "2026-11-11",
+   "field": "Quantum",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP262",
+   "url": "https://www.jobs.ac.uk/job/DTP262/phd-studentship-in-soft-robotics-and-embodied-intelligence",
+   "title": "PhD Studentship in Soft Robotics and Embodied Intelligence",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-15",
+   "found": "2026-11-11",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP408",
+   "url": "https://www.jobs.ac.uk/job/DTP408/fse-phd-presidents-doctoral-scholarship-geospatial-foundation-modelling-to-improve-agricultural-monitoring-in-smallholder-farming-systems",
+   "title": "FSE PhD President's Doctoral Scholarship - Geospatial Foundation Modelling to Improve Agricultural Monitoring in Smallholder Farming Systems",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-11-18",
+   "found": "2026-11-11",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP429",
+   "url": "https://www.jobs.ac.uk/job/DTP429/fse-phd-presidents-doctoral-scholarship-synthetic-polymers-to-stabilise-sensing-proteins-into-membrane-nanodiscs",
+   "title": "FSE PhD President's Doctoral Scholarship - Synthetic Polymers to Stabilise Sensing Proteins into Membrane Nanodiscs",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-18",
+   "found": "2026-11-11",
+   "field": "Condensed matter",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP449",
+   "url": "https://www.jobs.ac.uk/job/DTP449/fse-phd-presidents-doctoral-scholarship-novel-electronics-for-sensing-electrical-cellular-interactions",
+   "title": "FSE PhD President's Doctoral Scholarship: Novel electronics for sensing electrical-cellular interactions",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-18",
+   "found": "2026-11-11",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "recruitment.eso.org/jobs/2026_0071",
+   "url": "https://recruitment.eso.org/jobs/2026_0071",
+   "title": "Engineering & Technology Studentship",
+   "source": "ESO",
+   "deadline": null,
+   "found": "2026-11-11",
+   "field": "Engineering",
+   "region": "Europe"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTP026",
    "url": "https://www.jobs.ac.uk/job/DTP026/phd-studentship-non-equilibrium-quantum-many-body-dynamics",

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,56 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTP743",
+   "url": "https://www.jobs.ac.uk/job/DTP743/phd-studentship-fse-phd-presidents-doctoral-scholarship-utis-and-the-menopause",
+   "title": "PhD Studentship - FSE PhD President's Doctoral Scholarship - UTIs and the Menopause",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-18",
+   "found": "2026-11-12",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP782",
+   "url": "https://www.jobs.ac.uk/job/DTP782/phd-studentship-centa-2027-b01-can-a-tree-remember-a-drought-understanding-the-mechanisms-of-tree-memory",
+   "title": "PhD Studentship: CENTA 2027-B01 Can a tree remember a drought? Understanding the mechanisms of tree memory",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-06",
+   "found": "2026-11-12",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP789",
+   "url": "https://www.jobs.ac.uk/job/DTP789/phd-studentship-centa-2027-b11-learning-the-changing-extremes-of-european-precipitation-in-a-warming-climate",
+   "title": "PhD Studentship: CENTA 2027-B11 Learning the changing extremes of European precipitation in a warming climate",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-06",
+   "found": "2026-11-12",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP664",
+   "url": "https://www.jobs.ac.uk/job/DTP664/fse-phd-presidents-doctoral-scholarship-sensing-brca2-loss-synthetic-antibodies-for-precision-prostate-cancer-treatment",
+   "title": "FSE PhD President's Doctoral Scholarship: Sensing BRCA2 Loss: Synthetic Antibodies for Precision Prostate Cancer Treatment",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-18",
+   "found": "2026-11-12",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTO944",
+   "url": "https://www.jobs.ac.uk/job/DTO944/phd-studentships-in-engineering-solutions-for-antimicrobial-resistance-fully-funded-four-year",
+   "title": "PhD Studentships in Engineering Solutions for Antimicrobial Resistance (Fully funded/ Four-Year)",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-13",
+   "found": "2026-11-12",
+   "field": "Engineering",
+   "region": "UK"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTO484",
    "url": "https://www.jobs.ac.uk/job/DTO484/phd-studentship-terahertz-photons-for-quantum-control-and-topological-quantum-information",

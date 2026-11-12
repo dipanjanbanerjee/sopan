@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,46 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTQ170",
+   "url": "https://www.jobs.ac.uk/job/DTQ170/phd-studentship-using-next-generation-ocean-observations-and-machine-learning-to-transform-mixed-layer-depth-predictions",
+   "title": "PhD Studentship: Using next generation ocean observations and machine learning to transform mixed layer depth predictions",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-13",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ201",
+   "url": "https://www.jobs.ac.uk/job/DTQ201/phd-studentship-autonomous-satellite-linked-acoustic-monitoring-of-biodiversity-and-threats-in-the-celtic-sea",
+   "title": "PhD Studentship: Autonomous satellite-linked acoustic monitoring of biodiversity and threats in the Celtic Sea",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-13",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ204",
+   "url": "https://www.jobs.ac.uk/job/DTQ204/phd-studentship-from-crisis-to-opportunity-sargasso-sargassum-as-raw-material-for-green-affordable-and-sustainable-shelter-opportunities",
+   "title": "PhD Studentship: From crisis to opportunity: SARGASSO (Sargassum As Raw material for Green, Affordable, and Sustainable Shelter Opportunities)",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-13",
+   "field": "Condensed matter",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ238",
+   "url": "https://www.jobs.ac.uk/job/DTQ238/phd-studentship-machine-learning-the-building-blocks-of-the-weather-forecast",
+   "title": "PhD Studentship: Machine Learning the Building Blocks of the Weather Forecast",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-13",
+   "field": "Physics",
+   "region": "UK"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTP743",
    "url": "https://www.jobs.ac.uk/job/DTP743/phd-studentship-fse-phd-presidents-doctoral-scholarship-utis-and-the-menopause",

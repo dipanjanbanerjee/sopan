@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,76 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTQ422",
+   "url": "https://www.jobs.ac.uk/job/DTQ422/phd-studentship-solving-the-puzzle-of-contrasting-arctic-and-antarctic-sea-ice-changes",
+   "title": "PhD Studentship: Solving the puzzle of contrasting Arctic and Antarctic sea ice changes",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-14",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ484",
+   "url": "https://www.jobs.ac.uk/job/DTQ484/phd-studentship-exploiting-insar-loop-closure-for-monitoring-soil-moisture-and-vegetation-dynamics",
+   "title": "PhD Studentship - Exploiting InSAR Loop Closure for Monitoring Soil Moisture and Vegetation Dynamics",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-14",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ504",
+   "url": "https://www.jobs.ac.uk/job/DTQ504/phd-studentship-quantifying-the-risk-of-persistent-extreme-weather-events-in-a-changing-climate",
+   "title": "PhD Studentship - Quantifying the Risk of Persistent Extreme Weather Events in a Changing Climate",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-14",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ527",
+   "url": "https://www.jobs.ac.uk/job/DTQ527/phd-studentship-how-do-peatland-restoration-activities-influence-drought-resilience-and-the-reliability-of-water-supplies-under-future-climate-pressures",
+   "title": "PhD Studentship: How do Peatland Restoration Activities Influence Drought Resilience and the Reliability of Water Supplies Under Future Climate Pressures?",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-14",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ550",
+   "url": "https://www.jobs.ac.uk/job/DTQ550/phd-studentship-dynamic-turbulence-modelling-for-convective-storms",
+   "title": "PhD Studentship - Dynamic Turbulence Modelling for Convective Storms",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-14",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ569",
+   "url": "https://www.jobs.ac.uk/job/DTQ569/phd-studentship-nanoconfined-water-from-molecular-physics-to-mechanical-energy-absorption",
+   "title": "PhD Studentship: Nanoconfined Water From Molecular Physics to Mechanical Energy Absorption",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-02-12",
+   "found": "2026-11-14",
+   "field": "Condensed matter",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTQ583",
+   "url": "https://www.jobs.ac.uk/job/DTQ583/phd-studentship-storylines-of-risk-assessment-for-wind-and-flood-impacts-in-a-post-net-zero-climate-in-the-uk",
+   "title": "PhD Studentship - Storylines of Risk Assessment for Wind and Flood Impacts in a Post-Net Zero Climate in the UK",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-07",
+   "found": "2026-11-14",
+   "field": "Physics",
+   "region": "UK"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTQ170",
    "url": "https://www.jobs.ac.uk/job/DTQ170/phd-studentship-using-next-generation-ocean-observations-and-machine-learning-to-transform-mixed-layer-depth-predictions",

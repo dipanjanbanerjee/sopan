@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -248,7 +248,8 @@
    "deadline": "2026-11-18",
    "found": "2026-11-11",
    "field": "Engineering",
-   "region": "UK"
+   "region": "UK",
+   "reminded": true
   },
   {
    "id": "www.jobs.ac.uk/job/DTP429",

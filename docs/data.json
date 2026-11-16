@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,36 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTQ938",
+   "url": "https://www.jobs.ac.uk/job/DTQ938/phd-studentship-centa-2027-b28-ai-enhanced-global-hydrological-modelling-for-assessing-uk-water-security-threats",
+   "title": "PhD Studentship: CENTA 2027-B28 AI-Enhanced Global Hydrological Modelling for Assessing UK Water Security Threats",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-06",
+   "found": "2026-11-17",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP384",
+   "url": "https://www.jobs.ac.uk/job/DTP384/phd-studentship-esrc-funded-studentships-in-health-and-wellbeing-at-brunel-university-london-via-the-grand-union-doctoral-training-partnership",
+   "title": "PhD Studentship: ESRC Funded Studentships in Health & Wellbeing at Brunel University London via the Grand Union Doctoral Training Partnership",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-15",
+   "found": "2026-11-17",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTR130",
+   "url": "https://www.jobs.ac.uk/job/DTR130/phd-studentship-centa-2027-ukceh01-hintermap-drone-based-mapping-to-improve-monitoring-and-understanding-of-headwater-and-intermittent-streams",
+   "title": "PhD Studentship: CENTA 2027-UKCEH01 HInterMap drone-based mapping to improve monitoring and understanding of headwater and intermittent streams",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-06",
+   "found": "2026-11-17",
+   "field": "Physics",
+   "region": "UK"
+  },
   {
    "id": "inphd.com/research/indian-institute-of-space-science-and-technology-iist-phd-admission-2027-jan",
    "url": "https://inphd.com/research/indian-institute-of-space-science-and-technology-iist-phd-admission-2027-jan/",

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,36 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTP360",
+   "url": "https://www.jobs.ac.uk/job/DTP360/phd-studentship-matching-ultrasonic-simulations-to-experiment",
+   "title": "PhD Studentship: Matching Ultrasonic Simulations to Experiment",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-01",
+   "found": "2026-11-18",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP364",
+   "url": "https://www.jobs.ac.uk/job/DTP364/phd-studentship-advanced-ultrasonic-detection-of-rail-foot-cracks",
+   "title": "PhD Studentship: Advanced Ultrasonic Detection of Rail Foot Cracks",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-01",
+   "found": "2026-11-18",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTR465",
+   "url": "https://www.jobs.ac.uk/job/DTR465/phd-studentship-research-studentship-in-computational-fracture-mechanics",
+   "title": "PhD Studentship: Research Studentship in Computational Fracture Mechanics",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-02",
+   "found": "2026-11-18",
+   "field": "Engineering",
+   "region": "UK"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTQ938",
    "url": "https://www.jobs.ac.uk/job/DTQ938/phd-studentship-centa-2027-b28-ai-enhanced-global-hydrological-modelling-for-assessing-uk-water-security-threats",

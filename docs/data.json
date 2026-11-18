@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,66 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTR743",
+   "url": "https://www.jobs.ac.uk/job/DTR743/phd-studentship-animal-behaviour-how-urban-living-shapes-reproductive-decisions-and-success-in-gulls",
+   "title": "PhD Studentship: Animal Behaviour: How Urban Living Shapes Reproductive Decisions and Success in Gulls",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2026-12-02",
+   "found": "2026-11-19",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTR753",
+   "url": "https://www.jobs.ac.uk/job/DTR753/phd-studentship-novel-ion-manipulation-and-laser-cooling-for-spectroscopy-of-exotic-nuclei",
+   "title": "PhD Studentship: Novel Ion Manipulation and Laser Cooling for Spectroscopy of Exotic Nuclei",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2027-01-31",
+   "found": "2026-11-19",
+   "field": "Astronomy",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTR674",
+   "url": "https://www.jobs.ac.uk/job/DTR674/phd-studentship-nanoscale-electrochemistry-electrodeposition-of-crystalline-transition-metal-dichalcogenide-materials",
+   "title": "PhD Studentship: Nanoscale Electrochemistry: Electrodeposition of Crystalline Transition Metal Dichalcogenide Materials",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-02-16",
+   "found": "2026-11-19",
+   "field": "Condensed matter",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTR690",
+   "url": "https://www.jobs.ac.uk/job/DTR690/human-geography-fully-funded-phd-scholarship-in-the-esrc-welsh-graduate-school-for-the-social-sciences-wgsss-human-geography",
+   "title": "Human Geography: Fully Funded PhD Scholarship in the ESRC Welsh Graduate School for the Social Sciences (WGSSS) - Human Geography",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-06",
+   "found": "2026-11-19",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTP780",
+   "url": "https://www.jobs.ac.uk/job/DTP780/phd-studentship-whats-the-worst-that-can-happen-stress-testing-coupled-meteorological-hydrological-models-for-manchester",
+   "title": "PhD Studentship - What’s the Worst that can Happen? Stress-testing Coupled Meteorological - Hydrological Models for Manchester",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-02-18",
+   "found": "2026-11-19",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTR733",
+   "url": "https://www.jobs.ac.uk/job/DTR733/sports-and-exercise-science-fully-funded-phd-scholarship-in-the-esrc-welsh-graduate-school-for-the-social-sciences",
+   "title": "Sports and Exercise Science: Fully Funded PhD Scholarship in the ESRC Welsh Graduate School for the Social Sciences",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-06",
+   "found": "2026-11-19",
+   "field": "Physics",
+   "region": "UK"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTP360",
    "url": "https://www.jobs.ac.uk/job/DTP360/phd-studentship-matching-ultrasonic-simulations-to-experiment",
@@ -309,17 +369,6 @@
    "found": "2026-11-11",
    "field": "Engineering",
    "region": "UK"
-  },
-  {
-   "id": "www.jobs.ac.uk/job/DTP408",
-   "url": "https://www.jobs.ac.uk/job/DTP408/fse-phd-presidents-doctoral-scholarship-geospatial-foundation-modelling-to-improve-agricultural-monitoring-in-smallholder-farming-systems",
-   "title": "FSE PhD President's Doctoral Scholarship - Geospatial Foundation Modelling to Improve Agricultural Monitoring in Smallholder Farming Systems",
-   "source": "jobs.ac.uk Physics",
-   "deadline": "2026-11-18",
-   "found": "2026-11-11",
-   "field": "Engineering",
-   "region": "UK",
-   "reminded": true
   },
   {
    "id": "www.jobs.ac.uk/job/DTP429",

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,116 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTS098",
+   "url": "https://www.jobs.ac.uk/job/DTS098/phd-studentship-decoding-charge-dynamics-in-triboelectric-nanogenerators-with-physics-informed-neural-networks",
+   "title": "PhD Studentship: Decoding Charge Dynamics in Triboelectric Nanogenerators with Physics-Informed Neural Networks",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2026-12-09",
+   "found": "2026-11-20",
+   "field": "Astronomy",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTS103",
+   "url": "https://www.jobs.ac.uk/job/DTS103/phd-studentship-open-quantum-batteries-via-time-fractional-dynamics",
+   "title": "PhD Studentship: Open Quantum Batteries via Time-Fractional Dynamics",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2026-12-09",
+   "found": "2026-11-20",
+   "field": "Astronomy",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTS090",
+   "url": "https://www.jobs.ac.uk/job/DTS090/phd-studentship-accessing-the-nonlinear-regime-by-coupling-graphene-resonators-with-superconducting-circuits",
+   "title": "PhD Studentship: Accessing the Nonlinear Regime by Coupling Graphene Resonators with Superconducting Circuits",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2026-12-09",
+   "found": "2026-11-20",
+   "field": "Astronomy",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTS119",
+   "url": "https://www.jobs.ac.uk/job/DTS119/phd-studentship-nanoquakes-for-pressure-sensing",
+   "title": "PhD Studentship: Nanoquakes for Pressure Sensing",
+   "source": "jobs.ac.uk PhD studentships",
+   "deadline": "2026-12-09",
+   "found": "2026-11-20",
+   "field": "Astronomy",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTR651",
+   "url": "https://www.jobs.ac.uk/job/DTR651/funded-phd-studentships-at-portsmouth-2027-entry",
+   "title": "Funded PhD Studentships at Portsmouth (2027 Entry)",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-15",
+   "found": "2026-11-20",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTS152",
+   "url": "https://www.jobs.ac.uk/job/DTS152/phd-studentship-single-ion-capture-and-imaging-to-determine-the-majorana-nature-of-the-neutrino",
+   "title": "PhD Studentship: Single Ion Capture and Imaging to Determine the Majorana Nature of the Neutrino",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-02-19",
+   "found": "2026-11-20",
+   "field": "Particle & nuclear",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTS217",
+   "url": "https://www.jobs.ac.uk/job/DTS217/marie-skodowska-curie-doctoral-network-researcher",
+   "title": "Marie Skłodowska-Curie Doctoral Network Researcher",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-03",
+   "found": "2026-11-20",
+   "field": "Physics",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTS265",
+   "url": "https://www.jobs.ac.uk/job/DTS265/phd-studentship-epsrc-dla-collaborative-studentship-with-rolls-royce-operator-learning-for-creep-behaviour-of-nickel-based-superalloys",
+   "title": "PhD Studentship: EPSRC DLA Collaborative Studentship with Rolls-Royce - Operator learning for creep behaviour of nickel based superalloys",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-15",
+   "found": "2026-11-20",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTS208",
+   "url": "https://www.jobs.ac.uk/job/DTS208/phd-studentship-supported-by-green-future-fellowship-project-terahertz-magnetic-recording-for-green-data-storage-technology",
+   "title": "PhD Studentship Supported by Green Future Fellowship Project: Terahertz Magnetic Recording for Green Data Storage Technology",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-01-31",
+   "found": "2026-11-20",
+   "field": "Condensed matter",
+   "region": "UK"
+  },
+  {
+   "id": "www.jobs.ac.uk/job/DTS304",
+   "url": "https://www.jobs.ac.uk/job/DTS304/phd-studentship-tensegrity-engineering-for-nonlinear-shape-shifting-and-embodied-locomanipulation",
+   "title": "PhD Studentship: Tensegrity Engineering for Nonlinear Shape-shifting and Embodied Locomanipulation",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2026-12-02",
+   "found": "2026-11-20",
+   "field": "Engineering",
+   "region": "UK"
+  },
+  {
+   "id": "academicjobsonline.org/ajo/jobs/33473",
+   "url": "https://academicjobsonline.org/ajo/jobs/33473",
+   "title": "Trinity College Dublin , MaScAmp [ ] Expression of interest for ERC-funded PhD position",
+   "source": "AcademicJobsOnline Physics",
+   "deadline": null,
+   "found": "2026-11-20",
+   "field": "Physics",
+   "region": "Worldwide"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTR743",
    "url": "https://www.jobs.ac.uk/job/DTR743/phd-studentship-animal-behaviour-how-urban-living-shapes-reproductive-decisions-and-success-in-gulls",
@@ -248,7 +358,8 @@
    "deadline": "2026-11-23",
    "found": "2026-11-14",
    "field": "Optics & photonics",
-   "region": "UK"
+   "region": "UK",
+   "reminded": true
   },
   {
    "id": "www.jobs.ac.uk/job/DTQ170",

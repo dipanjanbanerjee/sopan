@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -40,6 +40,16 @@
   "watching": 12
  },
  "items": [
+  {
+   "id": "www.jobs.ac.uk/job/DTS643",
+   "url": "https://www.jobs.ac.uk/job/DTS643/phd-studentship-machine-learning-and-uncertainty-quantification-for-complex-scientific-systems",
+   "title": "PhD Studentship: Machine Learning and Uncertainty Quantification for Complex Scientific Systems",
+   "source": "jobs.ac.uk Physics",
+   "deadline": "2027-02-18",
+   "found": "2026-11-21",
+   "field": "Physics",
+   "region": "UK"
+  },
   {
    "id": "www.jobs.ac.uk/job/DTS098",
    "url": "https://www.jobs.ac.uk/job/DTS098/phd-studentship-decoding-charge-dynamics-in-triboelectric-nanogenerators-with-physics-informed-neural-networks",

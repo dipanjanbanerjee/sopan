@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -369,17 +369,6 @@
    "found": "2026-11-14",
    "field": "Physics",
    "region": "UK"
-  },
-  {
-   "id": "www.jobs.ac.uk/job/DTQ576",
-   "url": "https://www.jobs.ac.uk/job/DTQ576/phd-studentship-kinetic-co-design-of-dna-amplification-and-ultrasensitive-photonic-sensing",
-   "title": "PhD Studentship: Kinetic co-design of DNA amplification and ultrasensitive photonic sensing",
-   "source": "jobs.ac.uk PhD studentships",
-   "deadline": "2026-11-23",
-   "found": "2026-11-14",
-   "field": "Optics & photonics",
-   "region": "UK",
-   "reminded": true
   },
   {
    "id": "www.jobs.ac.uk/job/DTQ170",

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "telegram_url": "https://t.me/SopanAlerts",
   "pro_url": null,
   "sources": [
@@ -618,7 +618,8 @@
    "deadline": "2026-11-30",
    "found": "2026-11-06",
    "field": "Physics",
-   "region": "UK"
+   "region": "UK",
+   "reminded": true
   },
   {
    "id": "www.timeshighereducation.com/unijobs/listing/417454",
